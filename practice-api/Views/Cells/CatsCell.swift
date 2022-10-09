@@ -46,7 +46,7 @@ final class CatsCell: UITableViewCell {
   @IBAction func likeButtonTapped(_ sender: UIButton) {
     sender.isSelected.toggle()
 //    if sender.isSelected {
-//    22.10.10 여기서부터 다시시작⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+//    22.10.10 여기서부터 다시시작⭐️⭐️⭐️
 //
 //    }
   }
