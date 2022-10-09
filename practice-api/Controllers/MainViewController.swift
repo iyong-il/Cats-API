@@ -7,9 +7,9 @@
 
 import UIKit
 import SnapKit
-import Then
 
-final class ViewController: UIViewController {
+// MARK: - 뷰 컨트롤러
+final class MainViewController: UIViewController {
 
   private let tableView = UITableView()
   private let refreshControl = UIRefreshControl()
@@ -17,49 +17,57 @@ final class ViewController: UIViewController {
   private var networkManager = NetworkingManager.shared
   private var catsArrays: CatsData = []
 
-  var pages = 1
+  private var pages = 1
+
+  // 이미 만들어진 셀들의 높이 값을 저장
+  private var cellHeight: [IndexPath: CGFloat] = [:]
 
 // MARK: - 뷰디드로드
   override func viewDidLoad() {
     super.viewDidLoad()
     setupDatas()
     setupTableView()
+    setupTableViewSnp()
     setupNavbar()
     setupRefresh()
   }
 
 // MARK: - 데이터 셋업 메서드
   private func setupDatas() {
-    networkManager.fetchData(page: 1) { result in
+    networkManager.fetchData(page: pages) { result in
       switch result {
+        // 성공 케이스
       case .success(let catsData):
-        self.catsArrays = catsData
+        // 빈 배열에 추가하는 방식 - 후에 페이징을 위해
+        self.catsArrays.append(contentsOf: catsData)
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
           self.tableView.reloadData()
         }
-
+        // 실패 케이스
       case .failure(let error):
         print(error.localizedDescription)
       }
-
     }
 
   }
 
 // MARK: - 테이블뷰 셋업 메서드
   private func setupTableView() {
-
     tableView.dataSource = self
     tableView.delegate = self
     tableView.separatorStyle = .none
-    tableView.register(UINib(nibName: Cell.tableCellID, bundle: nil), forCellReuseIdentifier: Cell.tableCellID)
+    tableView.register(UINib(nibName: CatCell.catCellID, bundle: nil), forCellReuseIdentifier: CatCell.catCellID)
+  }
+  
+// MARK: - 테이블뷰 스냅킷 메서드
+  private func setupTableViewSnp() {
     self.view.addSubview(tableView)
     tableView.snp.makeConstraints {
-      $0.top.equalToSuperview()
-      $0.left.equalToSuperview()
-      $0.right.equalToSuperview()
-      $0.bottom.equalToSuperview()
+      $0.top.left.right.bottom.equalToSuperview()
+//      $0.left.equalToSuperview()
+//      $0.right.equalToSuperview()
+//      $0.bottom.equalToSuperview()
     }
 
   }
@@ -85,6 +93,7 @@ final class ViewController: UIViewController {
 
   // MARK: - 셀렉터 / 리프레시
   @objc func refresh(_ sender:UIRefreshControl) {
+    catsArrays = []
     pages = 1
     setupDatas()
     self.refreshControl.endRefreshing()
@@ -100,15 +109,14 @@ final class ViewController: UIViewController {
 }
 
 // MARK: - 확장 / 테이블뷰 데이터소스
-extension ViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return catsArrays.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-    let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tableCellID, for: indexPath) as! CatsCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: CatCell.catCellID, for: indexPath) as! CatsCell
     cell.cats = catsArrays[indexPath.row]
 
     cell.selectionStyle = .none
@@ -118,10 +126,17 @@ extension ViewController: UITableViewDataSource {
 }
 
 // MARK: - 확장 / 테이블뷰 델리게이트
-extension ViewController: UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
 
-  func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-    return UITableView.automaticDimension
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    // 셀의 데이터 세팅이 완료 된 후 실제 높이 값
+    cellHeight[indexPath] = cell.frame.size.height
+  }
+
+  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    // 이미 만들어진 셀 높이가 없다면 무조건 360
+    // 페이징 시 화면이 튀는것을 방지하기 위해 높이를 고정시키는 것
+    return cellHeight[indexPath] ?? 360
   }
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -135,22 +150,10 @@ extension ViewController: UITableViewDelegate {
     let paginationY = tableViewContentSizeY * 0.2
 
     if contentOffsetY > tableViewContentSizeY - paginationY {
+      // 기존 데이터에 append
       pages += 1
-      networkManager.fetchData(page: pages) { result in
-        switch result {
-        case .success(let catsData):
-          DispatchQueue.global().async {
-            self.catsArrays.append(contentsOf: catsData)
-
-            DispatchQueue.main.async {
-              self.tableView.reloadData()
-            }
-          }
-
-        case .failure(let error):
-          print(error.localizedDescription)
-        }
-      }
+      setupDatas()
+      // 튀지는 않는데 좀 어색한 느낌이 있다. 다시 해봐야 할 부분
     }
 
   }

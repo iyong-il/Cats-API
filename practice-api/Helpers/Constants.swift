@@ -7,9 +7,21 @@
 
 import Foundation
 
-// MARK: - 셀 아이디
-enum Cell {
-  static let tableCellID = "CatsCell"
+// MARK: - 고양이 테이블뷰 셀 아이디
+enum CatCell {
+  static let catCellID = "CatsCell"
+}
+
+// MARK: - 좋아요 셀 아이디
+enum LikeCell {
+  static let likeCellID = "likeCell"
+  static let likeHeader = "likeListHeader"
+}
+
+// MARK: - 업로드 셀 아이디
+enum UploadCell {
+  static let uploadCellID = "uploadCell"
+  static let uploadHeader = "uploadListHeader"
 }
 
 // MARK: - API 키 값

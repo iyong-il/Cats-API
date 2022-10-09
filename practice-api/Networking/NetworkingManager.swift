@@ -6,18 +6,21 @@
 //
 
 import UIKit
-
+// MARK: - 에러타입정의
 enum NetworkError: Error {
   case networkingError
   case dataError
   case parseError
 }
 
-class NetworkingManager {
+final class NetworkingManager {
 
+  // 싱글톤으로 생성
   static let shared = NetworkingManager()
   private init() {}
 
+  // MARK: - Result타입 치환
+  // Result타입을 그냥 짧게 쓰고 싶어서
   typealias CatsError = (Result<[Cats], NetworkError>) -> Void
 
   func fetchData(page: Int, completion: @escaping CatsError) {
@@ -40,17 +43,22 @@ class NetworkingManager {
         return
       }
 
-      guard let safeData = data,
-            let cats = self.parseJSON(safeData) else {
+      guard let safeData = data else {
         completion(.failure(.dataError))
         return
       }
 
+      guard let cats = self.parseJSON(safeData) else {
+        completion(.failure(.parseError))
+        return
+      }
       completion(.success(cats))
+      
     }.resume()
 
   }
-// MARK: - 데이터 검사 메서드
+
+  // MARK: - 데이터 검사 메서드
   private func parseJSON(_ catsData: Data) -> [Cats]? {
     print(#function)
     do {

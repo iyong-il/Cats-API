@@ -20,18 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // 탭바컨트롤러의 생성
     let tabBarVC = UITabBarController()
 
-    // 첫번째 화면은 네비게이션컨트롤러로 만들기 (기본루트뷰 설정)
-    let vc1 = UINavigationController(rootViewController: ViewController())
+    // 화면 네비게이션컨트롤러로 만들기 (기본루트뷰 설정)
+    let vc1 = UINavigationController(rootViewController: MainViewController())
     let vc2 = UINavigationController(rootViewController: FavoritesViewController())
     let vc3 = UINavigationController(rootViewController: UploadViewController())
-
 
     // 탭바 이름들 설정
     vc1.title = "고양이들"
     vc2.title = "목록"
     vc3.title = "업로드"
-
-
 
     // 탭바로 사용하기 위한 뷰 컨트롤러들 설정
     tabBarVC.setViewControllers([vc1, vc2, vc3], animated: false)

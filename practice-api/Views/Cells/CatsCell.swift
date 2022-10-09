@@ -6,9 +6,10 @@
 //
 
 import UIKit
+// MARK: - 테이블뷰 셀
+final class CatsCell: UITableViewCell {
 
-class CatsCell: UITableViewCell {
-
+  // MARK: - didSet활용으로 한번에 데이터 받기
   var cats: Cats? {
     didSet {
       setupUIwithData()
@@ -19,7 +20,7 @@ class CatsCell: UITableViewCell {
   @IBOutlet weak var LikeButton: UIButton!
   var catsID: String?
 
-  // MARK: - 뷰디드로드 전 호출되는 메서드
+  // MARK: - 셀 재사용 전 호출되는 메서드
   override func prepareForReuse() {
     super.prepareForReuse()
 
@@ -31,9 +32,6 @@ class CatsCell: UITableViewCell {
     setupUI()
   }
 
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
 
   // MARK: - UI셋업 메서드
   private func setupUI() {
@@ -47,6 +45,10 @@ class CatsCell: UITableViewCell {
   // MARK: - 버튼이 눌렸을 때 메서드
   @IBAction func likeButtonTapped(_ sender: UIButton) {
     sender.isSelected.toggle()
+//    if sender.isSelected {
+//    22.10.10 여기서부터 다시시작⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+//
+//    }
   }
 
   // MARK: - 이미지와 아이디를 한번에 넘기기위한 메서드
@@ -72,4 +74,13 @@ class CatsCell: UITableViewCell {
     }
   }
 
+
+
+}
+
+// MARK: - 셀 확장
+extension CatsCell {
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+  }
 }
