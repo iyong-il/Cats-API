@@ -117,6 +117,7 @@ extension MainViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: CatCell.catCellID, for: indexPath) as! CatsCell
     cell.cats = catsArrays[indexPath.row]
 
+    
     cell.selectionStyle = .none
     return cell
   }
