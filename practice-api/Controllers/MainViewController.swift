@@ -41,7 +41,7 @@ final class MainViewController: UIViewController {
         // 빈 배열에 추가하는 방식 - 후에 페이징을 위해
         self.catsArrays.append(contentsOf: catsData)
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
           self.tableView.reloadData()
         }
         // 실패 케이스
@@ -63,11 +63,9 @@ final class MainViewController: UIViewController {
 // MARK: - 테이블뷰 스냅킷 메서드
   private func setupTableViewSnp() {
     self.view.addSubview(tableView)
+
     tableView.snp.makeConstraints {
-      $0.top.left.right.bottom.equalToSuperview()
-//      $0.left.equalToSuperview()
-//      $0.right.equalToSuperview()
-//      $0.bottom.equalToSuperview()
+      $0.edges.equalToSuperview()
     }
 
   }

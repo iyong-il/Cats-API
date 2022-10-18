@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,8 +18,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="373" height="92"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-4x-4ss">
-                            <rect key="frame" x="147.66666666666666" y="35.666666666666664" width="78" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="20" y="25" width="159" height="42"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -28,7 +27,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="6iP-4x-4ss" firstAttribute="centerY" secondItem="I5m-bt-d77" secondAttribute="centerY" id="1yM-tr-3eD"/>
-                        <constraint firstItem="6iP-4x-4ss" firstAttribute="centerX" secondItem="I5m-bt-d77" secondAttribute="centerX" id="unU-q7-Cxk"/>
+                        <constraint firstItem="6iP-4x-4ss" firstAttribute="leading" secondItem="I5m-bt-d77" secondAttribute="leading" constant="20" id="KyR-V5-mnj"/>
                     </constraints>
                 </view>
             </subviews>

@@ -15,7 +15,7 @@ class LikeCollectionViewCell: UICollectionViewCell {
   
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      likeImageView.backgroundColor = .blue
     }
 
 }

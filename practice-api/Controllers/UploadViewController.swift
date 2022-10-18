@@ -5,58 +5,57 @@
 //  Created by 이용일(Rodi) on 2022/10/09.
 //
 import UIKit
-import PhotosUI
+//import PhotosUI
 
 final class UploadViewController: UIViewController {
 
+  // MARK: - 속성
   private let uploadView = UploadView()
 
-  // MARK: - 로드뷰
+  // 이미지 피커
+  private let imagePicker = UIImagePickerController()
+
+  // MARK: - 라이프 사이클
+  // 로드뷰
   override func loadView() {
     self.view = uploadView
   }
 
-  // MARK: - 뷰디드로드
+  // 뷰디드로드
   override func viewDidLoad() {
     super.viewDidLoad()
     setupButton()
     setupNavbar()
 
+
   }
-  // MARK: - 업로드뷰 버튼 메서드
-  // 뷰에 관한 사항이 아니기 때문에 VC에 넣음
-  // 뷰에 넣는게 더 깔끔할 것 같기도 하지만 일단은 정석적인 방법을 위해
+
+  // 업로드뷰 버튼 메서드
   private func setupButton() {
     uploadView.selectButton.addTarget(self, action: #selector(selecButtonTapped), for: .touchUpInside)
     uploadView.uploadButton.addTarget(self, action: #selector(uploadButton), for: .touchUpInside)
     uploadView.deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
-
   }
-  // MARK: - 셀렉터 / 사진 선택 버튼
+
+  // MARK: - 셀렉터
+  // 사진 선택 버튼
   @objc func selecButtonTapped() {
-    var configuration = PHPickerConfiguration()
-    configuration.selectionLimit = 0
-    configuration.filter = .any(of: [.images])
-
-    // 피커뷰컨트롤러 생성
-    let picker = PHPickerViewController(configuration: configuration)
-    // 피커뷰컨트롤러의 대리자 설정
-    picker.delegate = self
-    // 피커뷰 띄우기
-    self.present(picker, animated: true)
+    imagePicker.delegate = self
+    imagePicker.allowsEditing = true
+    self.present(imagePicker, animated: true)
   }
 
-  // MARK: - 셀렉터 / 사진 업로드 버튼
+  // 사진 업로드 버튼
   @objc func uploadButton() {
-//    append 해야함
+    //    append 해야함
   }
 
-// MARK: - 셀렉터 / 사진 삭제 버튼
+  // 사진 삭제 버튼
   @objc func deleteButtonTapped() {
     uploadView.imageView.image = nil
   }
 
-// MARK: - 네비게이션바 셋업 메서드
+  // 네비게이션바 셋업 메서드
   private func setupNavbar() {
     self.title = "업로드"
 
@@ -73,22 +72,18 @@ final class UploadViewController: UIViewController {
   
 
 }
+
 // MARK: - 확장 / 피커뷰
-extension UploadViewController: PHPickerViewControllerDelegate {
-  func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-    picker.dismiss(animated: true)
+extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    let itemProvider = results.first?.itemProvider
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let catsImage = info[.editedImage] as? UIImage else { return }
+    uploadView.imageView.image = catsImage
 
-    if let itemProvider = itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
-      itemProvider.loadObject(ofClass: UIImage.self) { (image, errer) in
-        DispatchQueue.main.async {
-          self.uploadView.imageView.image = image as? UIImage
-        }
-      }
-    } else {
+    uploadView.imageView.layer.masksToBounds = true
+    uploadView.imageView.clipsToBounds = true
 
-    }
+    dismiss(animated: true)
   }
 
 

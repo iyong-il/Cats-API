@@ -31,6 +31,7 @@ final class NetworkingManager {
       completion(result)
     }
   }
+
   // MARK: - GET 메서드
   private func getData(url: URL, completion: @escaping CatsError) {
     print(#function)
@@ -52,6 +53,7 @@ final class NetworkingManager {
         completion(.failure(.parseError))
         return
       }
+      
       completion(.success(cats))
       
     }.resume()
@@ -70,10 +72,8 @@ final class NetworkingManager {
     }
   }
 
-  // MARK: - POST 메서드
-  private func postData(url: URL, completion: @escaping CatsError) {
 
 
-  }
+
 
 }

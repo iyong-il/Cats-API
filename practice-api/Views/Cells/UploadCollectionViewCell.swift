@@ -13,7 +13,7 @@ class UploadCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      uploadImageView.backgroundColor = .yellow
     }
 
 }

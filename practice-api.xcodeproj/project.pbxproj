@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12072AC28FE699F00DEF1E4 /* VC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12072AB28FE699F00DEF1E4 /* VC+Ext.swift */; };
 		B14763EA28F3157C006466B5 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763E828F3157C006466B5 /* LikeCollectionViewCell.swift */; };
 		B14763EB28F3157C006466B5 /* LikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763E928F3157C006466B5 /* LikeCollectionViewCell.xib */; };
 		B14763F028F31709006466B5 /* UploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763EE28F31709006466B5 /* UploadCollectionViewCell.swift */; };
@@ -22,7 +23,7 @@
 		B1E9C23428F2D4E000331188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E9C23228F2D4E000331188 /* Main.storyboard */; };
 		B1E9C23628F2D4E100331188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1E9C23528F2D4E100331188 /* Assets.xcassets */; };
 		B1E9C23928F2D4E100331188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E9C23728F2D4E100331188 /* LaunchScreen.storyboard */; };
-		B1E9C24928F2D54600331188 /* PreViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24828F2D54600331188 /* PreViews.swift */; };
+		B1E9C24928F2D54600331188 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24828F2D54600331188 /* UIView+Ext.swift */; };
 		B1E9C24B28F2D5B200331188 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24A28F2D5B200331188 /* FavoritesViewController.swift */; };
 		B1E9C24D28F2D5BD00331188 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24C28F2D5BD00331188 /* UploadViewController.swift */; };
 		B1E9C25028F2D65800331188 /* CatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24E28F2D65800331188 /* CatsCell.swift */; };
@@ -33,10 +34,10 @@
 		B1E9C25B28F2D7F400331188 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1E9C25A28F2D7F400331188 /* SnapKit */; };
 		B1E9C25D28F2D86500331188 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C25C28F2D86500331188 /* Constants.swift */; };
 		B1E9C25F28F2DCD400331188 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C25E28F2DCD400331188 /* UploadView.swift */; };
-		B1E9C26128F2F29E00331188 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C26028F2F29D00331188 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B12072AB28FE699F00DEF1E4 /* VC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Ext.swift"; sourceTree = "<group>"; };
 		B14763E828F3157C006466B5 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B14763E928F3157C006466B5 /* LikeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B14763EE28F31709006466B5 /* UploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -54,7 +55,7 @@
 		B1E9C23528F2D4E100331188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1E9C23828F2D4E100331188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1E9C23A28F2D4E100331188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1E9C24828F2D54600331188 /* PreViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreViews.swift; sourceTree = "<group>"; };
+		B1E9C24828F2D54600331188 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		B1E9C24A28F2D5B200331188 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		B1E9C24C28F2D5BD00331188 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		B1E9C24E28F2D65800331188 /* CatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsCell.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		B1E9C25428F2D79100331188 /* Cats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cats.swift; sourceTree = "<group>"; };
 		B1E9C25C28F2D86500331188 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1E9C25E28F2DCD400331188 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
-		B1E9C26028F2F29D00331188 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,6 @@
 		B14763FA28F325CF006466B5 /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
-				B1E9C26028F2F29D00331188 /* FavoritesView.swift */,
 				B1E9C25E28F2DCD400331188 /* UploadView.swift */,
 			);
 			path = UIViews;
@@ -195,17 +194,10 @@
 		B1E9C24528F2D51700331188 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B1E9C24628F2D52100331188 /* Views+Ext */,
+				B1E9C24828F2D54600331188 /* UIView+Ext.swift */,
+				B12072AB28FE699F00DEF1E4 /* VC+Ext.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B1E9C24628F2D52100331188 /* Views+Ext */ = {
-			isa = PBXGroup;
-			children = (
-				B1E9C24828F2D54600331188 /* PreViews.swift */,
-			);
-			path = "Views+Ext";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +286,7 @@
 			files = (
 				B1E9C25028F2D65800331188 /* CatsCell.swift in Sources */,
 				B1E9C25F28F2DCD400331188 /* UploadView.swift in Sources */,
+				B12072AC28FE699F00DEF1E4 /* VC+Ext.swift in Sources */,
 				B1E9C25528F2D79100331188 /* Cats.swift in Sources */,
 				B14763F028F31709006466B5 /* UploadCollectionViewCell.swift in Sources */,
 				B1E9C23128F2D4E000331188 /* MainViewController.swift in Sources */,
@@ -301,9 +294,8 @@
 				B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */,
 				B1E9C22D28F2D4E000331188 /* AppDelegate.swift in Sources */,
 				B1E9C25D28F2D86500331188 /* Constants.swift in Sources */,
-				B1E9C24928F2D54600331188 /* PreViews.swift in Sources */,
+				B1E9C24928F2D54600331188 /* UIView+Ext.swift in Sources */,
 				B14763EA28F3157C006466B5 /* LikeCollectionViewCell.swift in Sources */,
-				B1E9C26128F2F29E00331188 /* FavoritesView.swift in Sources */,
 				B1E9C25328F2D67300331188 /* NetworkingManager.swift in Sources */,
 				B1E9C24B28F2D5B200331188 /* FavoritesViewController.swift in Sources */,
 				B14763FC28F3279F006466B5 /* CustomListSectionModal.swift in Sources */,
@@ -462,7 +454,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,7 +485,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

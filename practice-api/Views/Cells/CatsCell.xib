@@ -25,7 +25,7 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEy-uD-EqP">
-                        <rect key="frame" x="283.33333333333331" y="320" width="26.666666666666686" height="32"/>
+                        <rect key="frame" x="10" y="320" width="26.666666666666671" height="32"/>
                         <color key="tintColor" systemColor="systemRedColor"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="heart" catalog="system">
@@ -42,10 +42,10 @@
                 <constraints>
                     <constraint firstItem="dZD-S8-U3Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="AjJ-fu-HXp"/>
                     <constraint firstItem="dZD-S8-U3Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="DPJ-gF-zSd"/>
-                    <constraint firstItem="xEy-uD-EqP" firstAttribute="trailing" secondItem="dZD-S8-U3Q" secondAttribute="trailing" id="Mzo-8P-LHi"/>
                     <constraint firstItem="xEy-uD-EqP" firstAttribute="top" secondItem="dZD-S8-U3Q" secondAttribute="bottom" constant="10" id="R4u-un-FEN"/>
                     <constraint firstAttribute="bottom" secondItem="xEy-uD-EqP" secondAttribute="bottom" constant="10" id="d53-Jg-T0z"/>
                     <constraint firstAttribute="trailing" secondItem="dZD-S8-U3Q" secondAttribute="trailing" constant="10" id="dsp-1a-i3N"/>
+                    <constraint firstItem="xEy-uD-EqP" firstAttribute="leading" secondItem="dZD-S8-U3Q" secondAttribute="leading" id="wYm-7M-EFp"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
