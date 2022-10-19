@@ -11,23 +11,23 @@ import Then
 
 final class FavoritesViewController: UIViewController {
 
-
-
+  // MARK: - 속성
+  // 컬렉션뷰
   lazy var collectionView: UICollectionView = {
-      let view = UICollectionView(frame: .zero, collectionViewLayout: setupCompositionalLayoutList())
-      // 스크롤링 사용할것인지
-      view.isScrollEnabled = true
-      // 가로 스크롤바 표시 여부
-      view.showsHorizontalScrollIndicator = false
-      // 세로 스크롤바 표시 여부
-      view.showsVerticalScrollIndicator = true
-      // contentInset은 컨텐츠에 상하좌우 여백
-      view.contentInset = .zero
-      // 백그라운드 컬러
-      view.backgroundColor = .white
-      // subview들이 view의 bounds에 가둬질 수 있는 지를 판단하는 Boolean 값
-      view.clipsToBounds = true
-      return view
+    let view = UICollectionView(frame: .zero, collectionViewLayout: setupCompositionalLayoutList())
+    // 스크롤링 사용할것인지
+    view.isScrollEnabled = true
+    // 가로 스크롤바 표시 여부
+    view.showsHorizontalScrollIndicator = false
+    // 세로 스크롤바 표시 여부
+    view.showsVerticalScrollIndicator = true
+    // contentInset은 컨텐츠에 상하좌우 여백
+    view.contentInset = .zero
+    // 백그라운드 컬러
+    view.backgroundColor = .white
+    // subview들이 view의 bounds에 가둬질 수 있는 지를 판단하는 Boolean 값
+    view.clipsToBounds = true
+    return view
   }()
 
 
@@ -77,7 +77,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
 
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+    return 10
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -103,7 +103,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
 
 
 }
-
+// MARK: - 확장 / 컬렉션뷰 델리게이트
 extension FavoritesViewController: UICollectionViewDelegate {
 
 
@@ -130,11 +130,12 @@ extension FavoritesViewController: UICollectionViewDelegate {
 
   }
 }
+
 // MARK: - 확장 / 컬렉션뷰 컴포지셔널 레이아웃
 extension FavoritesViewController {
 
-  // MARK: - 컴포지셔널 레이아웃 설정 - 리스트
-  fileprivate func setupCompositionalLayoutList() -> UICollectionViewLayout {
+
+  private func setupCompositionalLayoutList() -> UICollectionViewLayout {
     // 컴포지셔널 레이아웃 생성
     let layout = UICollectionViewCompositionalLayout {
       // 만들게 되면 튜플 형식으로 값이 들어옴
@@ -142,29 +143,34 @@ extension FavoritesViewController {
       (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
 
 
-      /// 아이템사이즈 - 그룹의 가로크기의 1/5, 최소크기 50
-      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/5), heightDimension: .fractionalWidth(1/5))
-      /// 아이템사이즈로 아이템 만들기
+
+      // 아이템사이즈
+      let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .fractionalWidth(1/5))
+      // 아이템사이즈로 아이템 만들기
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
-      /// 아이템간의 여백 설정
+      // 아이템간의 여백 설정
       item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
-      /// 그룹사이즈 - 컬렉션뷰 가로길의의 1, 아이템사이즈의 높이크기(50)
+
+
+      // 그룹사이즈
       let groupSize = NSCollectionLayoutSize( widthDimension: .fractionalWidth(1.3), heightDimension: .estimated(80))
-      /// 그룹사이즈로 그룹만들기
+      // 그룹사이즈로 그룹만들기
       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-      /// 헤더사이즈 -
-      let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .absolute(100))
-      /// 헤더만들기
+
+
+      // 헤더사이즈
+      let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
+      // 헤더만들기
       let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
 
-      /// 섹션
+
+      // 섹션
       let section = NSCollectionLayoutSection(group: group)
-      /// 섹션에 헤더, 풋터 등록
+      // 섹션에 헤더  등록
       section.boundarySupplementaryItems = [header]
       section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0)
       section.orthogonalScrollingBehavior = .continuous
-      /// 반환
+
       return section
     }
 

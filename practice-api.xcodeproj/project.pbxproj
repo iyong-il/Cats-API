@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B12072AC28FE699F00DEF1E4 /* VC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12072AB28FE699F00DEF1E4 /* VC+Ext.swift */; };
 		B14763EA28F3157C006466B5 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763E828F3157C006466B5 /* LikeCollectionViewCell.swift */; };
 		B14763EB28F3157C006466B5 /* LikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763E928F3157C006466B5 /* LikeCollectionViewCell.xib */; };
 		B14763F028F31709006466B5 /* UploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763EE28F31709006466B5 /* UploadCollectionViewCell.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B12072AB28FE699F00DEF1E4 /* VC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Ext.swift"; sourceTree = "<group>"; };
 		B14763E828F3157C006466B5 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B14763E928F3157C006466B5 /* LikeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B14763EE28F31709006466B5 /* UploadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				B1E9C24828F2D54600331188 /* UIView+Ext.swift */,
-				B12072AB28FE699F00DEF1E4 /* VC+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,7 +283,6 @@
 			files = (
 				B1E9C25028F2D65800331188 /* CatsCell.swift in Sources */,
 				B1E9C25F28F2DCD400331188 /* UploadView.swift in Sources */,
-				B12072AC28FE699F00DEF1E4 /* VC+Ext.swift in Sources */,
 				B1E9C25528F2D79100331188 /* Cats.swift in Sources */,
 				B14763F028F31709006466B5 /* UploadCollectionViewCell.swift in Sources */,
 				B1E9C23128F2D4E000331188 /* MainViewController.swift in Sources */,

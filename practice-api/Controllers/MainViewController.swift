@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-// MARK: - 뷰 컨트롤러
 final class MainViewController: UIViewController {
 
+  // MARK: - 속성
   private let tableView = UITableView()
   private let refreshControl = UIRefreshControl()
 
@@ -22,17 +22,18 @@ final class MainViewController: UIViewController {
   // 이미 만들어진 셀들의 높이 값을 저장
   private var cellHeight: [IndexPath: CGFloat] = [:]
 
-// MARK: - 뷰디드로드
+  // MARK: - 라이프사이클
+  // 뷰디드로드
   override func viewDidLoad() {
     super.viewDidLoad()
     setupDatas()
     setupTableView()
-    setupTableViewSnp()
     setupNavbar()
     setupRefresh()
   }
 
-// MARK: - 데이터 셋업 메서드
+  // MARK: - 메서드
+  // 데이터 셋업
   private func setupDatas() {
     networkManager.fetchData(page: pages) { result in
       switch result {
@@ -41,7 +42,8 @@ final class MainViewController: UIViewController {
         // 빈 배열에 추가하는 방식 - 후에 페이징을 위해
         self.catsArrays.append(contentsOf: catsData)
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.async {
+
           self.tableView.reloadData()
         }
         // 실패 케이스
@@ -52,25 +54,23 @@ final class MainViewController: UIViewController {
 
   }
 
-// MARK: - 테이블뷰 셋업 메서드
+  // 테이블뷰 셋업
   private func setupTableView() {
-    tableView.dataSource = self
-    tableView.delegate = self
-    tableView.separatorStyle = .none
-    tableView.register(UINib(nibName: CatCell.catCellID, bundle: nil), forCellReuseIdentifier: CatCell.catCellID)
-  }
-  
-// MARK: - 테이블뷰 스냅킷 메서드
-  private func setupTableViewSnp() {
     self.view.addSubview(tableView)
 
     tableView.snp.makeConstraints {
       $0.edges.equalToSuperview()
     }
 
+    tableView.dataSource = self
+    tableView.delegate = self
+
+    tableView.separatorStyle = .none
+    tableView.register(UINib(nibName: CatCell.catCellID, bundle: nil), forCellReuseIdentifier: CatCell.catCellID)
+
   }
   
-// MARK: - 네비게이션바 셋업 메서드
+  // 네비게이션바 셋업
   private func setupNavbar() {
     self.title = "고양이들"
 
@@ -83,15 +83,15 @@ final class MainViewController: UIViewController {
     navigationController?.navigationBar.scrollEdgeAppearance = appearance
   }
 
-// MARK: - 리프레시 메서드
+  // 리프레시
   private func setupRefresh() {
     refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     tableView.refreshControl = refreshControl
   }
 
-  // MARK: - 셀렉터 / 리프레시
+  // MARK: - 셀렉터
+  // 리프레시
   @objc func refresh(_ sender:UIRefreshControl) {
-    catsArrays = []
     pages = 1
     setupDatas()
     self.refreshControl.endRefreshing()
@@ -117,7 +117,7 @@ extension MainViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: CatCell.catCellID, for: indexPath) as! CatsCell
     cell.cats = catsArrays[indexPath.row]
 
-    
+
     cell.selectionStyle = .none
     return cell
   }
@@ -139,7 +139,7 @@ extension MainViewController: UITableViewDelegate {
   }
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    print(#fileID, #function, #line, "- 페이지네이션")
+    print(#fileID, #function, #line, "- 페이징")
 
     // 화면에 보이는 좌측상단
     let contentOffsetY = scrollView.contentOffset.y

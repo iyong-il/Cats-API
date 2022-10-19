@@ -26,8 +26,7 @@ final class UploadViewController: UIViewController {
     super.viewDidLoad()
     setupButton()
     setupNavbar()
-
-
+    
   }
 
   // 업로드뷰 버튼 메서드

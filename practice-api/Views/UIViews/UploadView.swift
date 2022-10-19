@@ -17,8 +17,9 @@ final class UploadView: UIView {
   }
   
   let imageView = UIImageView().then {
-    $0.backgroundColor = .lightGray
-    $0.layer.cornerRadius = 8
+    $0.layer.cornerRadius = 16
+    $0.layer.borderColor = UIColor.black.cgColor
+    $0.layer.borderWidth = 1
   }
   
   let selectButton = UIButton().then {
@@ -48,30 +49,32 @@ final class UploadView: UIView {
     super.init(coder: coder)
   }
 
-  // MARK: - 뷰디드로드
+  // MARK: - 라이프사이클
   override init(frame: CGRect) {
     super.init(frame: frame)
     setup()
   }
   
-  // MARK: - 오토레이아웃
+  // 오토레이아웃
   override func updateConstraints() {
-    self.backgroundColor = .white
     setupSnp()
     super.updateConstraints()
   }
 
-  // MARK: - 셋업 메서드
+
+  // 셋업
   private func setup() {
+    self.backgroundColor = .white
     self.addSubview(deleteButton)
     self.addSubview(imageView)
     self.addSubview(stackView)
   }
 
-  // MARK: - 스냅킷 메서드
+  // 스냅킷
   private func setupSnp() {
     imageView.snp.makeConstraints {
-      $0.size.equalTo(330)
+      $0.height.equalTo(300)
+      $0.left.equalToSuperview().offset(10)
       $0.centerX.equalToSuperview()
       $0.top.equalToSuperview().offset(160)
     }
