@@ -16,6 +16,10 @@
 		B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763F628F317C8006466B5 /* UploadReusableView.swift */; };
 		B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763F728F317C8006466B5 /* UploadReusableView.xib */; };
 		B14763FC28F3279F006466B5 /* CustomListSectionModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763FB28F3279F006466B5 /* CustomListSectionModal.swift */; };
+		B1D64E2E2901DBBC00599C40 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */; };
+		B1D64E3A2901DEAE00599C40 /* Sunflower-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */; };
+		B1D64E3B2901DEAE00599C40 /* Sunflower-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */; };
+		B1D64E3C2901DEAE00599C40 /* Sunflower-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E392901DEAE00599C40 /* Sunflower-Medium.ttf */; };
 		B1E9C22D28F2D4E000331188 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C22C28F2D4E000331188 /* AppDelegate.swift */; };
 		B1E9C22F28F2D4E000331188 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C22E28F2D4E000331188 /* SceneDelegate.swift */; };
 		B1E9C23128F2D4E000331188 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C23028F2D4E000331188 /* MainViewController.swift */; };
@@ -45,6 +49,10 @@
 		B14763F628F317C8006466B5 /* UploadReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadReusableView.swift; sourceTree = "<group>"; };
 		B14763F728F317C8006466B5 /* UploadReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadReusableView.xib; sourceTree = "<group>"; };
 		B14763FB28F3279F006466B5 /* CustomListSectionModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListSectionModal.swift; sourceTree = "<group>"; };
+		B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
+		B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Bold.ttf"; sourceTree = "<group>"; };
+		B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Light.ttf"; sourceTree = "<group>"; };
+		B1D64E392901DEAE00599C40 /* Sunflower-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Medium.ttf"; sourceTree = "<group>"; };
 		B1E9C22928F2D4E000331188 /* practice-api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "practice-api.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E9C22C28F2D4E000331188 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E9C22E28F2D4E000331188 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +117,16 @@
 			path = UIViews;
 			sourceTree = "<group>";
 		};
+		B1D64E362901DE7000599C40 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */,
+				B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */,
+				B1D64E392901DEAE00599C40 /* Sunflower-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B1E9C22028F2D4E000331188 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 			children = (
 				B1E9C22C28F2D4E000331188 /* AppDelegate.swift */,
 				B1E9C22E28F2D4E000331188 /* SceneDelegate.swift */,
+				B1D64E362901DE7000599C40 /* Fonts */,
 				B1E9C24528F2D51700331188 /* Extensions */,
 				B1E9C24428F2D51200331188 /* Helpers */,
 				B1E9C24328F2D50600331188 /* Networking */,
@@ -193,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E9C24828F2D54600331188 /* UIView+Ext.swift */,
+				B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,11 +286,14 @@
 				B1E9C25128F2D65800331188 /* CatsCell.xib in Resources */,
 				B14763EB28F3157C006466B5 /* LikeCollectionViewCell.xib in Resources */,
 				B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */,
+				B1D64E3B2901DEAE00599C40 /* Sunflower-Light.ttf in Resources */,
 				B1E9C23928F2D4E100331188 /* LaunchScreen.storyboard in Resources */,
 				B14763F128F31709006466B5 /* UploadCollectionViewCell.xib in Resources */,
 				B1E9C23628F2D4E100331188 /* Assets.xcassets in Resources */,
+				B1D64E3C2901DEAE00599C40 /* Sunflower-Medium.ttf in Resources */,
 				B14763F528F317B7006466B5 /* LikeReusableView.xib in Resources */,
 				B1E9C23428F2D4E000331188 /* Main.storyboard in Resources */,
+				B1D64E3A2901DEAE00599C40 /* Sunflower-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +311,7 @@
 				B1E9C23128F2D4E000331188 /* MainViewController.swift in Sources */,
 				B1E9C24D28F2D5BD00331188 /* UploadViewController.swift in Sources */,
 				B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */,
+				B1D64E2E2901DBBC00599C40 /* UIFont+Ext.swift in Sources */,
 				B1E9C22D28F2D4E000331188 /* AppDelegate.swift in Sources */,
 				B1E9C25D28F2D86500331188 /* Constants.swift in Sources */,
 				B1E9C24928F2D54600331188 /* UIView+Ext.swift in Sources */,

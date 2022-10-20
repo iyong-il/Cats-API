@@ -43,7 +43,6 @@ final class MainViewController: UIViewController {
         self.catsArrays.append(contentsOf: catsData)
 
         DispatchQueue.main.async {
-
           self.tableView.reloadData()
         }
         // 실패 케이스
@@ -65,6 +64,7 @@ final class MainViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
 
+    tableView.showsVerticalScrollIndicator = false
     tableView.separatorStyle = .none
     tableView.register(UINib(nibName: CatCell.catCellID, bundle: nil), forCellReuseIdentifier: CatCell.catCellID)
 
@@ -132,11 +132,11 @@ extension MainViewController: UITableViewDelegate {
     cellHeight[indexPath] = cell.frame.size.height
   }
 
-  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    // 이미 만들어진 셀 높이가 없다면 무조건 360
-    // 페이징 시 화면이 튀는것을 방지하기 위해 높이를 고정시키는 것
-    return cellHeight[indexPath] ?? 360
-  }
+//  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//    // 이미 만들어진 셀 높이가 없다면 무조건 360
+//    // 페이징 시 화면이 튀는것을 방지하기 위해 높이를 고정시키는 것
+//    return cellHeight[indexPath] ?? 360
+//  }
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     print(#fileID, #function, #line, "- 페이징")

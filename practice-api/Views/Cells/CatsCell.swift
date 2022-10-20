@@ -37,7 +37,7 @@ final class CatsCell: UITableViewCell {
 
   // UI셋업 메서드
   private func setupUI() {
-    self.mainImageView.contentMode = .scaleToFill
+    self.mainImageView.contentMode = .scaleAspectFit
     self.mainImageView.layer.borderWidth = 1
     self.mainImageView.layer.borderColor = UIColor.black.cgColor
     self.mainImageView.clipsToBounds = true

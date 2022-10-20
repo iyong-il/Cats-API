@@ -14,22 +14,26 @@ final class UploadView: UIView {
   let deleteButton = UIButton().then {
     $0.setImage(UIImage(systemName: "x.circle.fill"), for: .normal)
     $0.tintColor = .lightGray
+    $0.contentMode = .scaleToFill
   }
   
   let imageView = UIImageView().then {
     $0.layer.cornerRadius = 16
     $0.layer.borderColor = UIColor.black.cgColor
     $0.layer.borderWidth = 1
+    $0.contentMode = .scaleAspectFit
   }
   
   let selectButton = UIButton().then {
     $0.setTitle("사진 선택하기", for: .normal)
+    $0.titleLabel?.font = UIFont.Sunflower(size: 24, weight: .bold)
     $0.backgroundColor = .systemBlue
     $0.layer.cornerRadius = 8
   }
   
   let uploadButton = UIButton().then {
     $0.setTitle("사진 업로드하기", for: .normal)
+    $0.titleLabel?.font = UIFont.Sunflower(size: 24, weight: .bold)
     $0.backgroundColor = .systemBlue
     $0.layer.cornerRadius = 8
   }

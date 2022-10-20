@@ -16,4 +16,12 @@ class UploadCollectionViewCell: UICollectionViewCell {
       uploadImageView.backgroundColor = .yellow
     }
 
+
+
+
+  @IBAction func deleteButtonTapped(_ sender: UIButton) {
+    
+  }
+
+
 }

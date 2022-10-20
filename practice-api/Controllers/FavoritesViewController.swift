@@ -34,13 +34,16 @@ final class FavoritesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupNavbar()
+    setupCollectionView()
+
+  }
+// 컬렉션뷰 셋업
+  private func setupCollectionView() {
     self.view.addSubview(collectionView)
 
-    self.navigationController?.navigationBar.isHidden = true
-    
     collectionView.snp.makeConstraints {
-      $0.top.left.right.equalToSuperview()
-      $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+      $0.edges.equalToSuperview()
     }
 
     collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -57,14 +60,21 @@ final class FavoritesViewController: UIViewController {
 
     // 업로드 헤더 등록
     collectionView.register(UINib(nibName: String(describing: UploadReusableView.self), bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: UploadCell.uploadHeader)
+
   }
 
+  // 네비게이션바 셋업
+  private func setupNavbar() {
+    self.title = "목록"
 
-
-
-
-
-
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    appearance.backgroundColor = .white
+    navigationController?.navigationBar.tintColor = .systemBlue
+    navigationController?.navigationBar.standardAppearance = appearance
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
+  }
 
 }
 

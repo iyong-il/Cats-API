@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,6 +24,17 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OTT-ne-xnu">
                         <rect key="frame" x="0.0" y="0.0" width="157" height="144"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43M-Bo-VTj">
+                        <rect key="frame" x="121" y="108" width="26" height="26"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="x.circle.fill" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                        </state>
+                        <connections>
+                            <action selector="deleteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="NvV-6o-qj9"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -36,7 +46,9 @@
                 <constraint firstItem="gDQ-5l-CDm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fAC-Mq-4p6"/>
                 <constraint firstAttribute="bottom" secondItem="OTT-ne-xnu" secondAttribute="bottom" id="nfe-Ie-Irv"/>
                 <constraint firstItem="OTT-ne-xnu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rCR-pj-BMS"/>
+                <constraint firstAttribute="bottom" secondItem="43M-Bo-VTj" secondAttribute="bottom" constant="10" id="sgD-sa-ead"/>
                 <constraint firstItem="OTT-ne-xnu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="u8k-X2-2yb"/>
+                <constraint firstAttribute="trailing" secondItem="43M-Bo-VTj" secondAttribute="trailing" constant="10" id="zQH-xB-rTx"/>
             </constraints>
             <size key="customSize" width="157" height="144"/>
             <connections>
@@ -46,6 +58,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="x.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
