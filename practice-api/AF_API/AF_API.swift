@@ -41,6 +41,8 @@ enum AF_API {
 
   }
 
+  
+
 //  static func postAFDatas() {
 //    let url = "\(API.myKey)v1/images/upload"
 //    var request = URLRequest(url: URL(string: url)!)
