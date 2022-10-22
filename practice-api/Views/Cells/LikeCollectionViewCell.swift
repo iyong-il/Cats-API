@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LikeCollectionViewCell: UICollectionViewCell {
+final class LikeCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var likeImageView: UIImageView!
 
@@ -16,6 +16,17 @@ class LikeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
       likeImageView.backgroundColor = .blue
+      likeImageView.layer.cornerRadius = 8
+      likeImageView.layer.borderColor = UIColor.black.cgColor
+      likeImageView.layer.borderWidth = 0.2
+      likeImageView.contentMode = .scaleAspectFit
     }
+
+
+  @IBAction func deleteButtonTapped(_ sender: UIButton) {
+    
+  }
+
+
 
 }

@@ -17,28 +17,26 @@ final class UploadView: UIView {
     $0.contentMode = .scaleToFill
   }
   
-  let imageView = UIImageView().then {
+  lazy var imageView = UIImageView().then {
     $0.layer.cornerRadius = 16
     $0.layer.borderColor = UIColor.black.cgColor
     $0.layer.borderWidth = 1
     $0.contentMode = .scaleAspectFit
   }
   
-  let selectButton = UIButton().then {
-    $0.setTitle("사진 선택하기", for: .normal)
-    $0.titleLabel?.font = UIFont.Sunflower(size: 24, weight: .bold)
-    $0.backgroundColor = .systemBlue
-    $0.layer.cornerRadius = 8
-  }
+  let selectButton: UIButton = {
+    let button = Utilities().makeButton(text: "사진 선택하기")
+
+    return button
+  }()
   
-  let uploadButton = UIButton().then {
-    $0.setTitle("사진 업로드하기", for: .normal)
-    $0.titleLabel?.font = UIFont.Sunflower(size: 24, weight: .bold)
-    $0.backgroundColor = .systemBlue
-    $0.layer.cornerRadius = 8
-  }
+  let uploadButton: UIButton = {
+    let button = Utilities().makeButton(text: "사진 업로드하기")
+
+    return button
+  }()
   
-  lazy var stackView = UIStackView().then {
+  private lazy var stackView = UIStackView().then {
     $0.addArrangedSubview(selectButton)
     $0.addArrangedSubview(uploadButton)
     

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// MARK: - 에러타입정의
+// 에러타입정의
 enum NetworkError: Error {
   case networkingError
   case dataError
@@ -19,8 +19,7 @@ final class NetworkingManager {
   static let shared = NetworkingManager()
   private init() {}
 
-  // MARK: - Result타입 치환
-  // Result타입을 그냥 짧게 쓰고 싶어서
+  // Result타입 치환 - 그냥 짧게 쓰고 싶어서
   typealias CatsError = (Result<[Cats], NetworkError>) -> Void
 
   func fetchData(page: Int, completion: @escaping CatsError) {
@@ -60,8 +59,8 @@ final class NetworkingManager {
 
   }
 
-  // MARK: - 데이터 검사 메서드
-  private func parseJSON(_ catsData: Data) -> [Cats]? {
+  // 데이터 검사 메서드
+  private func parseJSON(_ catsData: Data) -> CatsData? {
     print(#function)
     do {
       let decoder = JSONDecoder()

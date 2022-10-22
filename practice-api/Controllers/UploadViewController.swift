@@ -5,7 +5,6 @@
 //  Created by 이용일(Rodi) on 2022/10/09.
 //
 import UIKit
-//import PhotosUI
 
 final class UploadViewController: UIViewController {
 
@@ -29,12 +28,27 @@ final class UploadViewController: UIViewController {
     
   }
 
-  // 업로드뷰 버튼 메서드
+  // MARK: - 메서드
+  // 업로드뷰 버튼
   private func setupButton() {
     uploadView.selectButton.addTarget(self, action: #selector(selecButtonTapped), for: .touchUpInside)
     uploadView.uploadButton.addTarget(self, action: #selector(uploadButton), for: .touchUpInside)
     uploadView.deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
   }
+
+  // 네비게이션바 셋업
+  private func setupNavbar() {
+    self.title = "업로드"
+
+    let appearance = UINavigationBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    appearance.backgroundColor = .white
+    navigationController?.navigationBar.tintColor = .systemBlue
+    navigationController?.navigationBar.standardAppearance = appearance
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
+  }
+
 
   // MARK: - 셀렉터
   // 사진 선택 버튼
@@ -53,22 +67,6 @@ final class UploadViewController: UIViewController {
   @objc func deleteButtonTapped() {
     uploadView.imageView.image = nil
   }
-
-  // 네비게이션바 셋업 메서드
-  private func setupNavbar() {
-    self.title = "업로드"
-
-    let appearance = UINavigationBarAppearance()
-    appearance.configureWithOpaqueBackground()
-    appearance.backgroundColor = .white
-    navigationController?.navigationBar.tintColor = .systemBlue
-    navigationController?.navigationBar.standardAppearance = appearance
-    navigationController?.navigationBar.compactAppearance = appearance
-    navigationController?.navigationBar.scrollEdgeAppearance = appearance
-  }
-
-
-  
 
 }
 

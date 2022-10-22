@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 final class MainViewController: UIViewController {
 
@@ -15,7 +16,7 @@ final class MainViewController: UIViewController {
   private let refreshControl = UIRefreshControl()
 
   private var networkManager = NetworkingManager.shared
-  private var catsArrays: CatsData = []
+  private var catsArrays: [Cats] = []
 
   private var pages = 1
 
@@ -35,23 +36,23 @@ final class MainViewController: UIViewController {
   // MARK: - 메서드
   // 데이터 셋업
   private func setupDatas() {
-    networkManager.fetchData(page: pages) { result in
+    AF_API.setupAFDatas(page: pages) { result in
       switch result {
-        // 성공 케이스
-      case .success(let catsData):
-        // 빈 배열에 추가하는 방식 - 후에 페이징을 위해
-        self.catsArrays.append(contentsOf: catsData)
+      case .success(let data):
+        self.catsArrays.append(contentsOf: data)
 
         DispatchQueue.main.async {
           self.tableView.reloadData()
         }
-        // 실패 케이스
+
       case .failure(let error):
         print(error.localizedDescription)
       }
     }
 
   }
+
+  
 
   // 테이블뷰 셋업
   private func setupTableView() {

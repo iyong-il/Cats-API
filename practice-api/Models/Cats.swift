@@ -7,7 +7,7 @@
 
 import UIKit
 
-// 데이터를 묶기위해 치환
+// 데이터를 묶기위해
 typealias CatsData = [Cats]
 
 

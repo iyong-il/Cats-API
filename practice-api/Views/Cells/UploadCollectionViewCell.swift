@@ -7,13 +7,17 @@
 
 import UIKit
 
-class UploadCollectionViewCell: UICollectionViewCell {
+final class UploadCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var uploadImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
       uploadImageView.backgroundColor = .yellow
+      uploadImageView.layer.cornerRadius = 8
+      uploadImageView.layer.borderColor = UIColor.black.cgColor
+      uploadImageView.layer.borderWidth = 0.2
+      uploadImageView.contentMode = .scaleAspectFit
     }
 
 
