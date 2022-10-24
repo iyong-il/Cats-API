@@ -108,14 +108,24 @@ extension FavoritesViewController: UICollectionViewDataSource {
 
   // 섹션의 개수
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-
     return 2
   }
 
   // 섹션의 아이템 개수
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-    return 4
+    switch section {
+
+    case 0:
+      return 8
+
+    case 1:
+      return 4
+
+    default:
+      return 0
+
+    }
   }
 
   // 셀
@@ -125,27 +135,21 @@ extension FavoritesViewController: UICollectionViewDataSource {
     switch sectionIndex {
     case 0:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Like.likeCellID, for: indexPath) as! LikeCollectionViewCell
-
       // 버튼 클로저 - 좋아요 삭제
       cell.deleteButtonPressed = { [weak self] (sender) in
 
       }
-
       return cell
 
     case 1:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Upload.uploadCellID, for: indexPath) as! UploadCollectionViewCell
-
       // 버튼 클로저 - 업로드 삭제
-      cell.uploadButtonPressed = { [weak self] (sender) in
-
+      cell.uploadDeleteButtonPressed = { [weak self] (sender) in
       }
-
       return cell
 
     default:
       return UICollectionViewCell()
-
     }
 
   }

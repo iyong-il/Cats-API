@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - 고양이 테이블뷰 셀 아이디
-enum CatCell {
+public enum CatsCell {
   static let catCellID = "CatsCell"
 }
 

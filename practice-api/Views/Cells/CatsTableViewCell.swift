@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CatsCell: UITableViewCell {
+final class CatsTableViewCell: UITableViewCell {
 
   // MARK: - 속성
   var cats: Cats? {
@@ -51,9 +51,11 @@ final class CatsCell: UITableViewCell {
 
     if sender.isSelected {
       // 버튼이 눌린다면
+      print(#fileID, #function, #line, "- 좋아요")
 
     }else {
       // 아니라면
+      print(#fileID, #function, #line, "- 좋아요해제")
 
     }
   }

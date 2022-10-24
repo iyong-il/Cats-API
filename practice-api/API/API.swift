@@ -8,13 +8,14 @@
 import UIKit
 import Alamofire
 
-// MARK: - 네트워킹 시도 두번째
+// MARK: - 네트워킹 시도 두번째 / Alamofire
 enum API {
 
-  typealias GetError = (Result<[Cats], Error>) -> Void
 
   // MARK: - GET 메서드
-  static func setupAFDatas(page: Int, completion: @escaping GetError)  {
+  typealias GetError = (Result<[Cats], Error>) -> Void
+
+  static func setupAFDatas(page: Int = 1, completion: @escaping GetError)  {
     let url = "\(APIs.key)v1/images/search?"
     let params = [
       "format": "json",
@@ -45,21 +46,20 @@ enum API {
 
   }// GET
 
+  // MARK: - POST 메서드
+  // 사진을 등록하면 밑에 params형태로 데이터가 저장이 되는데 이걸 내가 어떻게 접근해서 등록을 해야할까...?
+  // postman으로 등록했을 때는 사진 url만 넣었더니 등록이 됐는데
+  // 이걸 어떻게 할 수 있을까 - 확실히 공부한 기간이 티가 나네
+  // post를 구현하면 delete는 금방 구현 할거 같은데
   typealias PostError = (Result<[UploadData], Error>) -> Void
 
-  static func postAFDatas(completion: @escaping PostError) {
+  static func postAFDatas(file: String, completion: @escaping PostError) {
     let url = "\(APIs.myKey)v1/images/upload"
     var request = URLRequest(url: URL(string: url)!)
     request.httpMethod = "POST"
 
     let params = [
-      "id": "아이디",
-      "url": "유알엘",
-      "width": "넓이",
-      "height": "높이",
-      "originalFilename": "파일이름",
-      "pending": "펜딩",
-      "approved": "접근"
+      "file": file
     ] as Dictionary
 
 

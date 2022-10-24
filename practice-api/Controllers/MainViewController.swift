@@ -67,7 +67,7 @@ final class MainViewController: UIViewController {
 
     tableView.showsVerticalScrollIndicator = false
     tableView.separatorStyle = .none
-    tableView.register(UINib(nibName: CatCell.catCellID, bundle: nil), forCellReuseIdentifier: CatCell.catCellID)
+    tableView.register(UINib(nibName: String(describing: CatsTableViewCell.self), bundle: nil), forCellReuseIdentifier: CatsCell.catCellID)
 
   }
   
@@ -93,7 +93,6 @@ final class MainViewController: UIViewController {
   // MARK: - 셀렉터
   // 리프레시
   @objc func refresh(_ sender:UIRefreshControl) {
-    pages = 1
     setupDatas()
     self.refreshControl.endRefreshing()
   }
@@ -115,7 +114,7 @@ extension MainViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CatCell.catCellID, for: indexPath) as! CatsCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: CatsCell.catCellID, for: indexPath) as! CatsTableViewCell
     cell.cats = catsArrays[indexPath.row]
 
 

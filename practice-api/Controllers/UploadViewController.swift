@@ -60,7 +60,7 @@ final class UploadViewController: UIViewController {
 
   // 사진 업로드 버튼
   @objc func uploadButton() {
-    //    append 해야함
+    //  insert 해야함
   }
 
   // 사진 삭제 버튼

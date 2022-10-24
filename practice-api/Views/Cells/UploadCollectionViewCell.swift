@@ -11,7 +11,7 @@ final class UploadCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var uploadImageView: UIImageView!
 
-  var uploadButtonPressed: (UploadCollectionViewCell) -> Void = { (sender) in }
+  var uploadDeleteButtonPressed: (UploadCollectionViewCell) -> Void = { (sender) in }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +26,7 @@ final class UploadCollectionViewCell: UICollectionViewCell {
 
 
   @IBAction func deleteButtonTapped(_ sender: UIButton) {
-    uploadButtonPressed(self)
+    uploadDeleteButtonPressed(self)
   }
 
 

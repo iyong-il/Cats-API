@@ -16,6 +16,9 @@
 		B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763F628F317C8006466B5 /* UploadReusableView.swift */; };
 		B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763F728F317C8006466B5 /* UploadReusableView.xib */; };
 		B17E36242902EB58008B58B4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E36232902EB58008B58B4 /* API.swift */; };
+		B1AA9C5D29073B880001BA08 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C5C29073B880001BA08 /* SnapKit */; };
+		B1AA9C6029073B900001BA08 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C5F29073B900001BA08 /* Alamofire */; };
+		B1AA9C6329073B960001BA08 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C6229073B960001BA08 /* Then */; };
 		B1D64E2E2901DBBC00599C40 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */; };
 		B1D64E3A2901DEAE00599C40 /* Sunflower-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */; };
 		B1D64E3B2901DEAE00599C40 /* Sunflower-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */; };
@@ -30,15 +33,12 @@
 		B1E9C24928F2D54600331188 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24828F2D54600331188 /* UIView+Ext.swift */; };
 		B1E9C24B28F2D5B200331188 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24A28F2D5B200331188 /* FavoritesViewController.swift */; };
 		B1E9C24D28F2D5BD00331188 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24C28F2D5BD00331188 /* UploadViewController.swift */; };
-		B1E9C25028F2D65800331188 /* CatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24E28F2D65800331188 /* CatsCell.swift */; };
-		B1E9C25128F2D65800331188 /* CatsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1E9C24F28F2D65800331188 /* CatsCell.xib */; };
+		B1E9C25028F2D65800331188 /* CatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C24E28F2D65800331188 /* CatsTableViewCell.swift */; };
+		B1E9C25128F2D65800331188 /* CatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1E9C24F28F2D65800331188 /* CatsTableViewCell.xib */; };
 		B1E9C25328F2D67300331188 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C25228F2D67300331188 /* NetworkingManager.swift */; };
 		B1E9C25528F2D79100331188 /* Cats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C25428F2D79100331188 /* Cats.swift */; };
-		B1E9C25828F2D7EA00331188 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B1E9C25728F2D7EA00331188 /* Then */; };
-		B1E9C25B28F2D7F400331188 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1E9C25A28F2D7F400331188 /* SnapKit */; };
 		B1E9C25D28F2D86500331188 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C25C28F2D86500331188 /* Constants.swift */; };
 		B1E9C25F28F2DCD400331188 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C25E28F2DCD400331188 /* UploadView.swift */; };
-		B1EFE7A62902CDC600998F82 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1EFE7A52902CDC600998F82 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,8 +67,8 @@
 		B1E9C24828F2D54600331188 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		B1E9C24A28F2D5B200331188 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		B1E9C24C28F2D5BD00331188 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
-		B1E9C24E28F2D65800331188 /* CatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsCell.swift; sourceTree = "<group>"; };
-		B1E9C24F28F2D65800331188 /* CatsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatsCell.xib; sourceTree = "<group>"; };
+		B1E9C24E28F2D65800331188 /* CatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsTableViewCell.swift; sourceTree = "<group>"; };
+		B1E9C24F28F2D65800331188 /* CatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatsTableViewCell.xib; sourceTree = "<group>"; };
 		B1E9C25228F2D67300331188 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		B1E9C25428F2D79100331188 /* Cats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cats.swift; sourceTree = "<group>"; };
 		B1E9C25C28F2D86500331188 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -80,9 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1EFE7A62902CDC600998F82 /* Alamofire in Frameworks */,
-				B1E9C25828F2D7EA00331188 /* Then in Frameworks */,
-				B1E9C25B28F2D7F400331188 /* SnapKit in Frameworks */,
+				B1AA9C5D29073B880001BA08 /* SnapKit in Frameworks */,
+				B1AA9C6329073B960001BA08 /* Then in Frameworks */,
+				B1AA9C6029073B900001BA08 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,8 +92,8 @@
 		B14763E628F3139B006466B5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B1E9C24E28F2D65800331188 /* CatsCell.swift */,
-				B1E9C24F28F2D65800331188 /* CatsCell.xib */,
+				B1E9C24E28F2D65800331188 /* CatsTableViewCell.swift */,
+				B1E9C24F28F2D65800331188 /* CatsTableViewCell.xib */,
 				B14763E828F3157C006466B5 /* LikeCollectionViewCell.swift */,
 				B14763E928F3157C006466B5 /* LikeCollectionViewCell.xib */,
 				B14763EE28F31709006466B5 /* UploadCollectionViewCell.swift */,
@@ -255,9 +255,9 @@
 			);
 			name = "practice-api";
 			packageProductDependencies = (
-				B1E9C25728F2D7EA00331188 /* Then */,
-				B1E9C25A28F2D7F400331188 /* SnapKit */,
-				B1EFE7A52902CDC600998F82 /* Alamofire */,
+				B1AA9C5C29073B880001BA08 /* SnapKit */,
+				B1AA9C5F29073B900001BA08 /* Alamofire */,
+				B1AA9C6229073B960001BA08 /* Then */,
 			);
 			productName = "practice-api";
 			productReference = B1E9C22928F2D4E000331188 /* practice-api.app */;
@@ -288,9 +288,9 @@
 			);
 			mainGroup = B1E9C22028F2D4E000331188;
 			packageReferences = (
-				B1E9C25628F2D7EA00331188 /* XCRemoteSwiftPackageReference "Then" */,
-				B1E9C25928F2D7F400331188 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				B1EFE7A42902CDC600998F82 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B1AA9C5B29073B880001BA08 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B1AA9C5E29073B900001BA08 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B1AA9C6129073B960001BA08 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = B1E9C22A28F2D4E000331188 /* Products */;
 			projectDirPath = "";
@@ -306,7 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1E9C25128F2D65800331188 /* CatsCell.xib in Resources */,
+				B1E9C25128F2D65800331188 /* CatsTableViewCell.xib in Resources */,
 				B14763EB28F3157C006466B5 /* LikeCollectionViewCell.xib in Resources */,
 				B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */,
 				B1D64E3B2901DEAE00599C40 /* Sunflower-Light.ttf in Resources */,
@@ -327,7 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1E9C25028F2D65800331188 /* CatsCell.swift in Sources */,
+				B1E9C25028F2D65800331188 /* CatsTableViewCell.swift in Sources */,
 				B1E9C25F28F2DCD400331188 /* UploadView.swift in Sources */,
 				B1E9C25528F2D79100331188 /* Cats.swift in Sources */,
 				B14763F028F31709006466B5 /* UploadCollectionViewCell.swift in Sources */,
@@ -570,15 +570,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B1E9C25628F2D7EA00331188 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		B1E9C25928F2D7F400331188 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		B1AA9C5B29073B880001BA08 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -586,9 +578,17 @@
 				kind = branch;
 			};
 		};
-		B1EFE7A42902CDC600998F82 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		B1AA9C5E29073B900001BA08 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B1AA9C6129073B960001BA08 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -597,20 +597,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B1E9C25728F2D7EA00331188 /* Then */ = {
+		B1AA9C5C29073B880001BA08 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1E9C25628F2D7EA00331188 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-		B1E9C25A28F2D7F400331188 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1E9C25928F2D7F400331188 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = B1AA9C5B29073B880001BA08 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		B1EFE7A52902CDC600998F82 /* Alamofire */ = {
+		B1AA9C5F29073B900001BA08 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1EFE7A42902CDC600998F82 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = B1AA9C5E29073B900001BA08 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		B1AA9C6229073B960001BA08 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1AA9C6129073B960001BA08 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

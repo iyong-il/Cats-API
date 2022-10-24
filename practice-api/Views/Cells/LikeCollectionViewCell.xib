@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="LikeCollectionViewCell" customModule="practice_api" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="" id="gTV-IL-0wX" customClass="LikeCollectionViewCell" customModule="practice_api" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="233" height="224"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -50,11 +50,11 @@
                 <constraint firstItem="Csm-B7-MJJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rTp-RL-CCA"/>
                 <constraint firstAttribute="trailing" secondItem="Csm-B7-MJJ" secondAttribute="trailing" id="wsR-00-BeU"/>
             </constraints>
-            <size key="customSize" width="233" height="224"/>
+            <size key="customSize" width="395" height="311"/>
             <connections>
                 <outlet property="likeImageView" destination="gpY-CR-jHO" id="Cca-hf-7LB"/>
             </connections>
-            <point key="canvasLocation" x="328.46153846153845" y="65.402843601895725"/>
+            <point key="canvasLocation" x="453.07692307692304" y="95.616113744075818"/>
         </collectionViewCell>
     </objects>
     <resources>
