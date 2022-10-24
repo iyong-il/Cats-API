@@ -11,6 +11,8 @@ final class UploadCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var uploadImageView: UIImageView!
 
+  var uploadButtonPressed: (UploadCollectionViewCell) -> Void = { (sender) in }
+
     override func awakeFromNib() {
         super.awakeFromNib()
       uploadImageView.backgroundColor = .yellow
@@ -24,7 +26,7 @@ final class UploadCollectionViewCell: UICollectionViewCell {
 
 
   @IBAction func deleteButtonTapped(_ sender: UIButton) {
-    
+    uploadButtonPressed(self)
   }
 
 

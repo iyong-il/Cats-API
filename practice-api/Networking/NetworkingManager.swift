@@ -12,7 +12,7 @@ enum NetworkError: Error {
   case dataError
   case parseError
 }
-
+// MARK: - 네트워킹 시도 첫번째
 final class NetworkingManager {
 
   // 싱글톤으로 생성
@@ -24,7 +24,7 @@ final class NetworkingManager {
 
   func fetchData(page: Int, completion: @escaping CatsError) {
     print(#function)
-    guard let url = URL(string: "\(API.key)v1/images/search?\(API.format)&\(API.limit)&page=\(page)") else { return }
+    guard let url = URL(string: "\(APIs.key)v1/images/search?\(APIs.format)&\(APIs.limit)&page=\(page)") else { return }
 
     getData(url: url) { result in
       completion(result)

@@ -11,6 +11,9 @@ final class LikeCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var likeImageView: UIImageView!
 
+  var deleteButtonPressed: (LikeCollectionViewCell) -> Void = {(sender) in}
+
+
 
   
     override func awakeFromNib() {
@@ -24,7 +27,7 @@ final class LikeCollectionViewCell: UICollectionViewCell {
 
 
   @IBAction func deleteButtonTapped(_ sender: UIButton) {
-    
+    deleteButtonPressed(self)
   }
 
 

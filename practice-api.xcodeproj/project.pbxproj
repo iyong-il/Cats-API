@@ -15,8 +15,7 @@
 		B14763F528F317B7006466B5 /* LikeReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763F328F317B7006466B5 /* LikeReusableView.xib */; };
 		B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763F628F317C8006466B5 /* UploadReusableView.swift */; };
 		B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763F728F317C8006466B5 /* UploadReusableView.xib */; };
-		B17E36202902DC52008B58B4 /* UploadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E361F2902DC52008B58B4 /* UploadData.swift */; };
-		B17E36242902EB58008B58B4 /* AF_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E36232902EB58008B58B4 /* AF_API.swift */; };
+		B17E36242902EB58008B58B4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E36232902EB58008B58B4 /* API.swift */; };
 		B1D64E2E2901DBBC00599C40 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */; };
 		B1D64E3A2901DEAE00599C40 /* Sunflower-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */; };
 		B1D64E3B2901DEAE00599C40 /* Sunflower-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */; };
@@ -51,8 +50,7 @@
 		B14763F328F317B7006466B5 /* LikeReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeReusableView.xib; sourceTree = "<group>"; };
 		B14763F628F317C8006466B5 /* UploadReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadReusableView.swift; sourceTree = "<group>"; };
 		B14763F728F317C8006466B5 /* UploadReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadReusableView.xib; sourceTree = "<group>"; };
-		B17E361F2902DC52008B58B4 /* UploadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadData.swift; sourceTree = "<group>"; };
-		B17E36232902EB58008B58B4 /* AF_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AF_API.swift; sourceTree = "<group>"; };
+		B17E36232902EB58008B58B4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Bold.ttf"; sourceTree = "<group>"; };
 		B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Light.ttf"; sourceTree = "<group>"; };
@@ -123,12 +121,12 @@
 			path = UIViews;
 			sourceTree = "<group>";
 		};
-		B17E36212902E3A6008B58B4 /* AF_API */ = {
+		B17E36212902E3A6008B58B4 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B17E36232902EB58008B58B4 /* AF_API.swift */,
+				B17E36232902EB58008B58B4 /* API.swift */,
 			);
-			path = AF_API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		B1D64E362901DE7000599C40 /* Fonts */ = {
@@ -174,7 +172,7 @@
 				B1E9C24528F2D51700331188 /* Extensions */,
 				B1E9C24428F2D51200331188 /* Helpers */,
 				B1D64E3D2901F11000599C40 /* Utils */,
-				B17E36212902E3A6008B58B4 /* AF_API */,
+				B17E36212902E3A6008B58B4 /* API */,
 				B1E9C24328F2D50600331188 /* Networking */,
 				B1E9C24228F2D50100331188 /* Models */,
 				B1E9C24128F2D4FD00331188 /* Views */,
@@ -211,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				B1E9C25428F2D79100331188 /* Cats.swift */,
-				B17E361F2902DC52008B58B4 /* UploadData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B17E36202902DC52008B58B4 /* UploadData.swift in Sources */,
 				B1E9C25028F2D65800331188 /* CatsCell.swift in Sources */,
 				B1E9C25F28F2DCD400331188 /* UploadView.swift in Sources */,
 				B1E9C25528F2D79100331188 /* Cats.swift in Sources */,
@@ -348,7 +344,7 @@
 				B1E9C24B28F2D5B200331188 /* FavoritesViewController.swift in Sources */,
 				B14763F428F317B7006466B5 /* LikeReusableView.swift in Sources */,
 				B1E9C22F28F2D4E000331188 /* SceneDelegate.swift in Sources */,
-				B17E36242902EB58008B58B4 /* AF_API.swift in Sources */,
+				B17E36242902EB58008B58B4 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

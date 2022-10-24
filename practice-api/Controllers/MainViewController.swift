@@ -36,7 +36,7 @@ final class MainViewController: UIViewController {
   // MARK: - 메서드
   // 데이터 셋업
   private func setupDatas() {
-    AF_API.setupAFDatas(page: pages) { result in
+    API.setupAFDatas(page: pages) { result in
       switch result {
       case .success(let data):
         self.catsArrays.append(contentsOf: data)

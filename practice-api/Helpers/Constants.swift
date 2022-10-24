@@ -13,19 +13,19 @@ enum CatCell {
 }
 
 // MARK: - 좋아요 셀 아이디
-enum Like {
+public enum Like {
   static let likeCellID = "likeCell"
   static let likeHeader = "likeListHeader"
 }
 
 // MARK: - 업로드 셀 아이디
-enum Upload {
+public enum Upload {
   static let uploadCellID = "uploadCell"
   static let uploadHeader = "uploadListHeader"
 }
 
 // MARK: - API 키 값
-enum API {
+public enum APIs {
   static let key = "https://api.thecatapi.com/"
   static let format = "format=json"
   static let limit = "limit=10"

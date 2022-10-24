@@ -27,6 +27,12 @@ final class FavoritesViewController: UIViewController {
 
 
   // MARK: - 라이프사이클
+  // 뷰가 나타나기전 호출됨 - 반복호출
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    collectionView.reloadData()
+  }
+
   // 뷰디드로드
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -109,7 +115,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
   // 섹션의 아이템 개수
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-    return 10
+    return 4
   }
 
   // 셀
@@ -119,10 +125,22 @@ extension FavoritesViewController: UICollectionViewDataSource {
     switch sectionIndex {
     case 0:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Like.likeCellID, for: indexPath) as! LikeCollectionViewCell
+
+      // 버튼 클로저 - 좋아요 삭제
+      cell.deleteButtonPressed = { [weak self] (sender) in
+
+      }
+
       return cell
 
     case 1:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Upload.uploadCellID, for: indexPath) as! UploadCollectionViewCell
+
+      // 버튼 클로저 - 업로드 삭제
+      cell.uploadButtonPressed = { [weak self] (sender) in
+
+      }
+
       return cell
 
     default:
@@ -164,7 +182,7 @@ extension FavoritesViewController {
 
     // 아이템사이즈
     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalWidth(1/4))
-    // 아이템사이즈로 아이템 만들기
+    // 아이템 만들기
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     // 아이템간의 여백 설정
     item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
@@ -172,7 +190,7 @@ extension FavoritesViewController {
 
     // 그룹사이즈
     let groupSize = NSCollectionLayoutSize( widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(80))
-    // 그룹사이즈로 그룹만들기
+    // 그룹만들기
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
 

@@ -7,8 +7,9 @@
 
 import UIKit
 
-class Utilities {
+final class Utilities {
 
+  // 업로드관련 버튼
   func makeButton(text: String) -> UIButton {
     let button = UIButton()
     button.setTitle(text, for: .normal)

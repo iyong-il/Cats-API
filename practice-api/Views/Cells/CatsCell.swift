@@ -48,7 +48,14 @@ final class CatsCell: UITableViewCell {
   // 버튼이 눌렸을 때 메서드
   @IBAction func likeButtonTapped(_ sender: UIButton) {
     sender.isSelected.toggle()
-    // 아직 구현 전
+
+    if sender.isSelected {
+      // 버튼이 눌린다면
+
+    }else {
+      // 아니라면
+
+    }
   }
 
   // 이미지와 아이디를 한번에 넘기기위한 메서드

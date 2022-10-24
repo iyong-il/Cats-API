@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Sunflower-Bold.ttf">
+            <string>Sunflower-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,8 +23,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="373" height="92"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-4x-4ss">
-                            <rect key="frame" x="20" y="25" width="159" height="42"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                            <rect key="frame" x="20" y="28.666666666666671" width="165.33333333333334" height="35"/>
+                            <fontDescription key="fontDescription" name="Sunflower-Bold" family="Sunflower" pointSize="35"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
