@@ -25,7 +25,6 @@ final class UploadViewController: UIViewController {
     super.viewDidLoad()
     setupButton()
     setupNavbar()
-    
   }
 
   // MARK: - 메서드
@@ -53,9 +52,25 @@ final class UploadViewController: UIViewController {
   // MARK: - 셀렉터
   // 사진 선택 버튼
   @objc func selecButtonTapped() {
-    imagePicker.delegate = self
-    imagePicker.allowsEditing = true
-    self.present(imagePicker, animated: true)
+    let alert = UIAlertController()
+    let albumButton = UIAlertAction(title: "앨범 들어가기", style: .default) { [weak self] _ in
+      guard let self = self else { return }
+      self.imagePicker.delegate = self
+      self.imagePicker.allowsEditing = true
+      self.present(self.imagePicker, animated: true)
+    }
+    let cameraButton = UIAlertAction(title: "카메라앱 들어가기", style: .default) { _ in
+      print("카메라에 접근합니다.")
+    }
+    let cancelButton = UIAlertAction(title: "닫기", style: .cancel) { _ in
+      print("닫습니다.")
+    }
+
+    alert.addAction(albumButton)
+    alert.addAction(cameraButton)
+    alert.addAction(cancelButton)
+
+    self.present(alert, animated: true)
   }
 
   // 사진 업로드 버튼

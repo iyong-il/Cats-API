@@ -16,7 +16,8 @@ final class MainViewController: UIViewController {
   private let tableView = UITableView()
 
   private let refreshControl = UIRefreshControl().then {
-    $0.attributedTitle = NSAttributedString(string: "다른 고양이들을 불러올게요!", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemPurple])
+    $0.attributedTitle = NSAttributedString(string: "다른 고양이들을 불러올게요!",
+                                            attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemPurple])
     $0.tintColor = .systemPurple
     $0.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
   }

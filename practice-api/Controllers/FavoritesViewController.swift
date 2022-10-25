@@ -117,10 +117,10 @@ extension FavoritesViewController: UICollectionViewDataSource {
     switch section {
 
     case 0:
-      return 8
+      return 2
 
     case 1:
-      return 4
+      return 3
 
     default:
       return 0
@@ -135,16 +135,19 @@ extension FavoritesViewController: UICollectionViewDataSource {
     switch sectionIndex {
     case 0:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Like.likeCellID, for: indexPath) as! LikeCollectionViewCell
-      // 버튼 클로저 - 좋아요 삭제
-      cell.deleteButtonPressed = { [weak self] (sender) in
+      // 버튼 클로저 - 좋아요 삭제 (나중에 델리겟으로 변경 예정)
+      cell.likeDeleteButtonPressed = { [weak self] (sender) in
+        guard let self = self else { return }
 
       }
       return cell
 
     case 1:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Upload.uploadCellID, for: indexPath) as! UploadCollectionViewCell
-      // 버튼 클로저 - 업로드 삭제
+      // 버튼 클로저 - 업로드 삭제 (나중에 델리겟으로 변경 예정)
       cell.uploadDeleteButtonPressed = { [weak self] (sender) in
+        guard let self = self else { return }
+
       }
       return cell
 
@@ -161,11 +164,13 @@ extension FavoritesViewController: UICollectionViewDataSource {
 
     switch (kind, sectionIndex) {
 
+      // 좋아요헤더
     case (UICollectionView.elementKindSectionHeader, 0):
       let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Like.likeHeader, for: indexPath) as! LikeReusableView
 
       return header
 
+      // 업로드 헤더
     case (UICollectionView.elementKindSectionHeader, 1):
       let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Upload.uploadHeader, for: indexPath) as! UploadReusableView
 
@@ -185,15 +190,15 @@ extension FavoritesViewController {
   static func setupCompositionalLayoutHorizental()  -> NSCollectionLayoutSection {
 
     // 아이템사이즈
-    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalWidth(1/4))
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .absolute(120))
     // 아이템 만들기
     let item = NSCollectionLayoutItem(layoutSize: itemSize)
     // 아이템간의 여백 설정
-    item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
 
 
     // 그룹사이즈
-    let groupSize = NSCollectionLayoutSize( widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(80))
+    let groupSize = NSCollectionLayoutSize( widthDimension: .fractionalWidth(1.0), heightDimension: itemSize.heightDimension)
     // 그룹만들기
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
@@ -209,7 +214,7 @@ extension FavoritesViewController {
 
     // 섹션에 헤더  등록
     section.boundarySupplementaryItems = [header]
-    section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0)
+    section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0)
 
     // 오른쪽으로 스크롤 가능
     section.orthogonalScrollingBehavior = .continuous
