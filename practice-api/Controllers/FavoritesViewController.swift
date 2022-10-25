@@ -101,6 +101,19 @@ final class FavoritesViewController: UIViewController {
     return layout
   }
 
+
+
+  fileprivate func makeAlert(text: String) -> UIAlertController {
+    let alert = UIAlertController(title: text, message: nil, preferredStyle: .alert)
+    let deleteButton = UIAlertAction(title: "삭제", style: .destructive) { _ in
+
+    }
+    let cancelButton = UIAlertAction(title: "취소", style: .cancel)
+    alert.addAction(deleteButton)
+    alert.addAction(cancelButton)
+    self.present(alert, animated: true)
+    return alert
+  }
 }
 
 // MARK: - 확장 / 컬렉션뷰 데이터소스
@@ -138,7 +151,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
       // 버튼 클로저 - 좋아요 삭제 (나중에 델리겟으로 변경 예정)
       cell.likeDeleteButtonPressed = { [weak self] (sender) in
         guard let self = self else { return }
-
+        self.makeAlert(text: "해제하시겠습니까?")
       }
       return cell
 
@@ -147,7 +160,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
       // 버튼 클로저 - 업로드 삭제 (나중에 델리겟으로 변경 예정)
       cell.uploadDeleteButtonPressed = { [weak self] (sender) in
         guard let self = self else { return }
-
+        self.makeAlert(text: "삭제하시겠습니까?")
       }
       return cell
 
