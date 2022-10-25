@@ -7,13 +7,19 @@
 
 import UIKit
 import SnapKit
+import Then
 import Alamofire
 
 final class MainViewController: UIViewController {
 
   // MARK: - 속성
   private let tableView = UITableView()
-  private let refreshControl = UIRefreshControl()
+
+  private let refreshControl = UIRefreshControl().then {
+    $0.attributedTitle = NSAttributedString(string: "다른 고양이들을 불러올게요!", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemPurple])
+    $0.tintColor = .systemPurple
+    $0.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+  }
 
   private var networkManager = NetworkingManager.shared
   private var catsArrays: [Cats] = []
@@ -30,7 +36,7 @@ final class MainViewController: UIViewController {
     setupDatas()
     setupTableView()
     setupNavbar()
-    setupRefresh()
+
   }
 
   // MARK: - 메서드
@@ -69,6 +75,7 @@ final class MainViewController: UIViewController {
     tableView.separatorStyle = .none
     tableView.register(UINib(nibName: String(describing: CatsTableViewCell.self), bundle: nil), forCellReuseIdentifier: CatsCell.catCellID)
 
+    tableView.refreshControl = refreshControl
   }
   
   // 네비게이션바 셋업
@@ -84,11 +91,6 @@ final class MainViewController: UIViewController {
     navigationController?.navigationBar.scrollEdgeAppearance = appearance
   }
 
-  // 리프레시
-  private func setupRefresh() {
-    refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-    tableView.refreshControl = refreshControl
-  }
 
   // MARK: - 셀렉터
   // 리프레시
