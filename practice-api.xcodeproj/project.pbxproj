@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B100C917290E897A00C8D525 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B100C916290E897A00C8D525 /* SDWebImage */; };
 		B14763EA28F3157C006466B5 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763E828F3157C006466B5 /* LikeCollectionViewCell.swift */; };
 		B14763EB28F3157C006466B5 /* LikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763E928F3157C006466B5 /* LikeCollectionViewCell.xib */; };
 		B14763F028F31709006466B5 /* UploadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763EE28F31709006466B5 /* UploadCollectionViewCell.swift */; };
@@ -82,6 +83,7 @@
 			files = (
 				B1AA9C5D29073B880001BA08 /* SnapKit in Frameworks */,
 				B1AA9C6329073B960001BA08 /* Then in Frameworks */,
+				B100C917290E897A00C8D525 /* SDWebImage in Frameworks */,
 				B1AA9C6029073B900001BA08 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +260,7 @@
 				B1AA9C5C29073B880001BA08 /* SnapKit */,
 				B1AA9C5F29073B900001BA08 /* Alamofire */,
 				B1AA9C6229073B960001BA08 /* Then */,
+				B100C916290E897A00C8D525 /* SDWebImage */,
 			);
 			productName = "practice-api";
 			productReference = B1E9C22928F2D4E000331188 /* practice-api.app */;
@@ -291,6 +294,7 @@
 				B1AA9C5B29073B880001BA08 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B1AA9C5E29073B900001BA08 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B1AA9C6129073B960001BA08 /* XCRemoteSwiftPackageReference "Then" */,
+				B100C915290E897A00C8D525 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = B1E9C22A28F2D4E000331188 /* Products */;
 			projectDirPath = "";
@@ -570,6 +574,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B100C915290E897A00C8D525 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B1AA9C5B29073B880001BA08 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -597,6 +609,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B100C916290E897A00C8D525 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B100C915290E897A00C8D525 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		B1AA9C5C29073B880001BA08 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B1AA9C5B29073B880001BA08 /* XCRemoteSwiftPackageReference "SnapKit" */;

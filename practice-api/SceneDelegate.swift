@@ -30,6 +30,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     vc2.title = "목록"
     vc3.title = "업로드"
 
+    [vc1, vc2, vc3].forEach {
+      let appearance = UINavigationBarAppearance()
+      appearance.configureWithOpaqueBackground()
+      appearance.backgroundColor = .white
+      $0.navigationBar.tintColor = .systemBlue
+      $0.navigationBar.standardAppearance = appearance
+      $0.navigationBar.compactAppearance = appearance
+      $0.navigationBar.scrollEdgeAppearance = appearance
+    }
+
     // 탭바로 사용하기 위한 뷰 컨트롤러들 설정
     tabBarVC.setViewControllers([vc1, vc2, vc3], animated: false)
     tabBarVC.modalPresentationStyle = .fullScreen

@@ -38,14 +38,6 @@ final class UploadViewController: UIViewController {
   // 네비게이션바 셋업
   private func setupNavbar() {
     self.title = "업로드"
-
-    let appearance = UINavigationBarAppearance()
-    appearance.configureWithOpaqueBackground()
-    appearance.backgroundColor = .white
-    navigationController?.navigationBar.tintColor = .systemBlue
-    navigationController?.navigationBar.standardAppearance = appearance
-    navigationController?.navigationBar.compactAppearance = appearance
-    navigationController?.navigationBar.scrollEdgeAppearance = appearance
   }
 
 

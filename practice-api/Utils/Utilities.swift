@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class Utilities {
+struct Utilities {
 
   // 업로드관련 버튼
   func makeButton(text: String) -> UIButton {

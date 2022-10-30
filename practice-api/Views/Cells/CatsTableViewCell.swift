@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class CatsTableViewCell: UITableViewCell {
 
@@ -69,19 +70,23 @@ final class CatsTableViewCell: UITableViewCell {
 
   // 이미지로드
   func loadImage(with imageUrl: String?) {
-    print(#function)
+    print(#fileID, #function, #line, "- 이미지를 받아오는 중입니다.")
+
     guard let urlString = imageUrl,
           let url = URL(string: urlString) else { return }
 
-    DispatchQueue.global().async {
-      guard let data = try? Data(contentsOf: url) else { return }
-      
-      guard urlString == url.absoluteString else { return }
+    // SDWebImage로 이미지 받아오기
+    mainImageView.sd_setImage(with: url)
 
-      DispatchQueue.main.async {
-        self.mainImageView.image = UIImage(data: data)
-      }
-    }
+//    DispatchQueue.global().async {
+//      guard let data = try? Data(contentsOf: url) else { return }
+//
+//      guard urlString == url.absoluteString else { return }
+//
+//      DispatchQueue.main.async {
+//        self.mainImageView.image = UIImage(data: data)
+//      }
+//    }
 
   }
 

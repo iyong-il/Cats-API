@@ -69,15 +69,6 @@ final class FavoritesViewController: UIViewController {
   // 네비게이션바 셋업
   private func setupNavbar() {
     self.title = "목록"
-
-    let appearance = UINavigationBarAppearance()
-    appearance.configureWithOpaqueBackground()
-    appearance.backgroundColor = .white
-    navigationController?.navigationBar.tintColor = .systemBlue
-    navigationController?.navigationBar.standardAppearance = appearance
-    navigationController?.navigationBar.compactAppearance = appearance
-    navigationController?.navigationBar.scrollEdgeAppearance = appearance
-
   }
 
   // 컴포지셔널 레이아웃 생성 - 타입메서드
