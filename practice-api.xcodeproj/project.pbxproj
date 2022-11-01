@@ -16,10 +16,13 @@
 		B14763F528F317B7006466B5 /* LikeReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763F328F317B7006466B5 /* LikeReusableView.xib */; };
 		B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763F628F317C8006466B5 /* UploadReusableView.swift */; };
 		B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763F728F317C8006466B5 /* UploadReusableView.xib */; };
+		B169167F2910101900D0A4AF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B169167E2910101900D0A4AF /* Lottie */; };
+		B16916812910103600D0A4AF /* 14348-just-a-pigeon.json in Resources */ = {isa = PBXBuildFile; fileRef = B16916802910103600D0A4AF /* 14348-just-a-pigeon.json */; };
 		B17E36242902EB58008B58B4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E36232902EB58008B58B4 /* API.swift */; };
 		B1AA9C5D29073B880001BA08 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C5C29073B880001BA08 /* SnapKit */; };
 		B1AA9C6029073B900001BA08 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C5F29073B900001BA08 /* Alamofire */; };
 		B1AA9C6329073B960001BA08 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C6229073B960001BA08 /* Then */; };
+		B1BB266D2910C3D000CCC95D /* 99988-like-animation-thumbs-up.json in Resources */ = {isa = PBXBuildFile; fileRef = B1BB266C2910C3D000CCC95D /* 99988-like-animation-thumbs-up.json */; };
 		B1D64E2E2901DBBC00599C40 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */; };
 		B1D64E3A2901DEAE00599C40 /* Sunflower-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */; };
 		B1D64E3B2901DEAE00599C40 /* Sunflower-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */; };
@@ -51,7 +54,9 @@
 		B14763F328F317B7006466B5 /* LikeReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeReusableView.xib; sourceTree = "<group>"; };
 		B14763F628F317C8006466B5 /* UploadReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadReusableView.swift; sourceTree = "<group>"; };
 		B14763F728F317C8006466B5 /* UploadReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadReusableView.xib; sourceTree = "<group>"; };
+		B16916802910103600D0A4AF /* 14348-just-a-pigeon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "14348-just-a-pigeon.json"; sourceTree = "<group>"; };
 		B17E36232902EB58008B58B4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B1BB266C2910C3D000CCC95D /* 99988-like-animation-thumbs-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "99988-like-animation-thumbs-up.json"; sourceTree = "<group>"; };
 		B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Bold.ttf"; sourceTree = "<group>"; };
 		B1D64E382901DEAE00599C40 /* Sunflower-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Light.ttf"; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B169167F2910101900D0A4AF /* Lottie in Frameworks */,
 				B1AA9C5D29073B880001BA08 /* SnapKit in Frameworks */,
 				B1AA9C6329073B960001BA08 /* Then in Frameworks */,
 				B100C917290E897A00C8D525 /* SDWebImage in Frameworks */,
@@ -131,6 +137,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		B1BB266B2910C24A00CCC95D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B1D64E3E2901F11D00599C40 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B1D64E362901DE7000599C40 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +158,10 @@
 		B1D64E3D2901F11000599C40 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B1D64E3E2901F11D00599C40 /* Utilities.swift */,
+				B1D64E362901DE7000599C40 /* Fonts */,
+				B1E9C24528F2D51700331188 /* Extensions */,
+				B1E9C24428F2D51200331188 /* Helpers */,
+				B1BB266B2910C24A00CCC95D /* Utilities */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -170,9 +187,6 @@
 			children = (
 				B1E9C22C28F2D4E000331188 /* AppDelegate.swift */,
 				B1E9C22E28F2D4E000331188 /* SceneDelegate.swift */,
-				B1D64E362901DE7000599C40 /* Fonts */,
-				B1E9C24528F2D51700331188 /* Extensions */,
-				B1E9C24428F2D51200331188 /* Helpers */,
 				B1D64E3D2901F11000599C40 /* Utils */,
 				B17E36212902E3A6008B58B4 /* API */,
 				B1E9C24328F2D50600331188 /* Networking */,
@@ -181,6 +195,8 @@
 				B1E9C24028F2D4F600331188 /* Controllers */,
 				B1E9C23728F2D4E100331188 /* LaunchScreen.storyboard */,
 				B1E9C23228F2D4E000331188 /* Main.storyboard */,
+				B16916802910103600D0A4AF /* 14348-just-a-pigeon.json */,
+				B1BB266C2910C3D000CCC95D /* 99988-like-animation-thumbs-up.json */,
 				B1E9C23528F2D4E100331188 /* Assets.xcassets */,
 				B1E9C23A28F2D4E100331188 /* Info.plist */,
 			);
@@ -261,6 +277,7 @@
 				B1AA9C5F29073B900001BA08 /* Alamofire */,
 				B1AA9C6229073B960001BA08 /* Then */,
 				B100C916290E897A00C8D525 /* SDWebImage */,
+				B169167E2910101900D0A4AF /* Lottie */,
 			);
 			productName = "practice-api";
 			productReference = B1E9C22928F2D4E000331188 /* practice-api.app */;
@@ -295,6 +312,7 @@
 				B1AA9C5E29073B900001BA08 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B1AA9C6129073B960001BA08 /* XCRemoteSwiftPackageReference "Then" */,
 				B100C915290E897A00C8D525 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				B169167D2910101900D0A4AF /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = B1E9C22A28F2D4E000331188 /* Products */;
 			projectDirPath = "";
@@ -314,7 +332,9 @@
 				B14763EB28F3157C006466B5 /* LikeCollectionViewCell.xib in Resources */,
 				B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */,
 				B1D64E3B2901DEAE00599C40 /* Sunflower-Light.ttf in Resources */,
+				B16916812910103600D0A4AF /* 14348-just-a-pigeon.json in Resources */,
 				B1E9C23928F2D4E100331188 /* LaunchScreen.storyboard in Resources */,
+				B1BB266D2910C3D000CCC95D /* 99988-like-animation-thumbs-up.json in Resources */,
 				B14763F128F31709006466B5 /* UploadCollectionViewCell.xib in Resources */,
 				B1E9C23628F2D4E100331188 /* Assets.xcassets in Resources */,
 				B1D64E3C2901DEAE00599C40 /* Sunflower-Medium.ttf in Resources */,
@@ -582,6 +602,14 @@
 				kind = branch;
 			};
 		};
+		B169167D2910101900D0A4AF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B1AA9C5B29073B880001BA08 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -613,6 +641,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B100C915290E897A00C8D525 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		B169167E2910101900D0A4AF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B169167D2910101900D0A4AF /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		B1AA9C5C29073B880001BA08 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

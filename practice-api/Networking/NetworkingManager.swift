@@ -12,7 +12,7 @@ enum NetworkError: Error {
   case dataError
   case parseError
 }
-// MARK: - 네트워킹 시도 첫번째
+// MARK: - 네트워킹 
 final class NetworkingManager {
 
   // 싱글톤으로 생성
@@ -29,6 +29,7 @@ final class NetworkingManager {
     getData(url: url) { result in
       completion(result)
     }
+
   }
 
   // MARK: - GET 메서드

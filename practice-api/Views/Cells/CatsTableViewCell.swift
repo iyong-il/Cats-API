@@ -20,6 +20,7 @@ final class CatsTableViewCell: UITableViewCell {
   @IBOutlet weak var mainImageView: UIImageView!
   @IBOutlet weak var LikeButton: UIButton!
   var catsID: String?
+  var likeButtonPressed: (CatsTableViewCell) -> Void = {(sender) in}
 
   // 셀 재사용 전 호출되는 메서드
   override func prepareForReuse() {
@@ -53,6 +54,7 @@ final class CatsTableViewCell: UITableViewCell {
     if sender.isSelected {
       // 버튼이 눌린다면
       print(#fileID, #function, #line, "- 좋아요")
+      likeButtonPressed(self)
 
     }else {
       // 아니라면
@@ -64,20 +66,21 @@ final class CatsTableViewCell: UITableViewCell {
   // 이미지와 아이디를 한번에 넘기기위한 메서드
   private func setupUIwithData() {
     guard let cats = cats else { return }
+    print(#fileID, #function, #line, "- 고양이 데이터가 있습니다.")
+
     loadImage(with: cats.url)
-    catsID = cats.id
   }
 
   // 이미지로드
   func loadImage(with imageUrl: String?) {
-    print(#fileID, #function, #line, "- 이미지를 받아오는 중입니다.")
+    print(#fileID, #function, #line, "- 고양이이미지를 받아오는 중입니다.")
 
     guard let urlString = imageUrl,
           let url = URL(string: urlString) else { return }
 
     // SDWebImage로 이미지 받아오기
     mainImageView.sd_setImage(with: url)
-
+    
 //    DispatchQueue.global().async {
 //      guard let data = try? Data(contentsOf: url) else { return }
 //

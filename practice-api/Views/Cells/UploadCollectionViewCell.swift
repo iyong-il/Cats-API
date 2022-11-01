@@ -9,12 +9,15 @@ import UIKit
 
 final class UploadCollectionViewCell: UICollectionViewCell {
 
+  var cats: Cats?
+
   @IBOutlet weak var uploadImageView: UIImageView!
 
   var uploadDeleteButtonPressed: (UploadCollectionViewCell) -> Void = { (sender) in }
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
       uploadImageView.backgroundColor = .yellow
       uploadImageView.layer.cornerRadius = 8
       uploadImageView.layer.borderColor = UIColor.black.cgColor

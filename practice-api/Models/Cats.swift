@@ -14,7 +14,7 @@ typealias CatsData = [Cats]
 // MARK: - 서버에서 주는 데이터
 struct Cats: Codable {
   let id: String?
-  let url: String?
+  var url: String?
   let width, height: Int?
 }
 

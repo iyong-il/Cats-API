@@ -11,6 +11,12 @@ import Then
 
 final class FavoritesViewController: UIViewController {
 
+  var likeArray: CatsData = []
+  var like: Cats?
+
+  var uploadArray: CatsData = []
+  var upload: Cats?
+
   // MARK: - 속성
   // 컬렉션뷰
   lazy var collectionView: UICollectionView = {
@@ -27,18 +33,26 @@ final class FavoritesViewController: UIViewController {
 
 
   // MARK: - 라이프사이클
-  // 뷰가 나타나기전 호출됨 - 반복호출
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    collectionView.reloadData()
-  }
-
   // 뷰디드로드
   override func viewDidLoad() {
     super.viewDidLoad()
     setupNavbar()
     setupCollectionView()
+    fetchData()
   }
+
+  // 테이블뷰에서 데이터 받아오기
+  func fetchData() {
+    guard let like = like else { return }
+    print(#fileID, #function, #line, "- 테이블뷰에서 데이터를 받아왔다.")
+    likeArray.insert(like, at: 0)
+
+    DispatchQueue.main.async {
+      self.collectionView.reloadData()
+    }
+  }
+
+
 
   // MARK: - 메서드
   // 컬렉션뷰 셋업
@@ -121,10 +135,10 @@ extension FavoritesViewController: UICollectionViewDataSource {
     switch section {
 
     case 0:
-      return 2
+      return likeArray.count
 
     case 1:
-      return 3
+      return uploadArray.count
 
     default:
       return 0
@@ -139,20 +153,28 @@ extension FavoritesViewController: UICollectionViewDataSource {
     switch sectionIndex {
     case 0:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Like.likeCellID, for: indexPath) as! LikeCollectionViewCell
+
+      cell.cats = likeArray[indexPath.item]
+
       // 버튼 클로저 - 좋아요 삭제 (나중에 델리겟으로 변경 예정)
       cell.likeDeleteButtonPressed = { [weak self] (sender) in
         guard let self = self else { return }
-        self.makeAlert(text: "해제하시겠습니까?")
+        self.makeAlert(text: "해제 하시겠습니까?")
       }
+
       return cell
 
     case 1:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Upload.uploadCellID, for: indexPath) as! UploadCollectionViewCell
+
+      cell.cats = uploadArray[indexPath.item]
+
       // 버튼 클로저 - 업로드 삭제 (나중에 델리겟으로 변경 예정)
       cell.uploadDeleteButtonPressed = { [weak self] (sender) in
         guard let self = self else { return }
-        self.makeAlert(text: "삭제하시겠습니까?")
+        self.makeAlert(text: "삭제 하시겠습니까?")
       }
+
       return cell
 
     default:

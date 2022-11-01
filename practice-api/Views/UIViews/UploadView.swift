@@ -63,7 +63,6 @@ final class UploadView: UIView {
     super.updateConstraints()
   }
 
-
   // 셋업
   private func setup() {
     self.backgroundColor = .white

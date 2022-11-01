@@ -8,8 +8,8 @@
 import UIKit
 import Alamofire
 
-// MARK: - 네트워킹 시도 두번째 / Alamofire
-enum API {
+// Alamofire로 API 받아오기
+struct API {
 
 
   // MARK: - GET 메서드

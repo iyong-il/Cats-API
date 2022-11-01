@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import Alamofire
+import Lottie
 
 final class MainViewController: UIViewController {
 
@@ -22,8 +23,13 @@ final class MainViewController: UIViewController {
     $0.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
   }
 
+  private lazy var animationView = LottieAnimationView(name: "99988-like-animation-thumbs-up").then {
+    $0.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+    $0.contentMode = .scaleAspectFill
+    $0.isHidden = true
+  }
   private var networkManager = NetworkingManager.shared
-  private var catsArrays: [Cats] = []
+  private var catsArrays: CatsData = []
 
   private var pages = 1
 
@@ -34,10 +40,9 @@ final class MainViewController: UIViewController {
   // 뷰디드로드
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupDatas()
-    setupTableView()
-    setupNavbar()
-
+      self.setupDatas()
+      self.setupTableView()
+      self.setupNavbar()
   }
 
   // MARK: - 메서드
@@ -48,9 +53,9 @@ final class MainViewController: UIViewController {
       case .success(let data):
         self.catsArrays.append(contentsOf: data)
 
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
           self.tableView.reloadData()
-        }
+//        }
 
       case .failure(let error):
         print(error.localizedDescription)
@@ -82,6 +87,8 @@ final class MainViewController: UIViewController {
   // 네비게이션바 셋업
   private func setupNavbar() {
     self.title = "고양이들"
+    self.view.addSubview(animationView)
+    animationView.center = self.view.center
   }
 
 
@@ -109,9 +116,20 @@ extension MainViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CatsCell.catCellID, for: indexPath) as! CatsTableViewCell
+    var cell = tableView.dequeueReusableCell(withIdentifier: CatsCell.catCellID, for: indexPath) as! CatsTableViewCell
     cell.cats = catsArrays[indexPath.row]
 
+    print(#fileID, #function, #line, "- API를 테이블 셀로 보낸다.")
+
+    cell.likeButtonPressed = { [weak self] (sender) in
+      self?.animationView.isHidden = false
+      self?.animationView.play { (finish) in
+        print(#fileID, #function, #line, "- 고양이 사진이 좋아요 목록으로 넘어간다.")
+        let vc = FavoritesViewController()
+        vc.like = cell.cats
+        self?.animationView.isHidden = true
+      }
+    }
 
     cell.selectionStyle = .none
     return cell
