@@ -45,6 +45,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     tabBarVC.modalPresentationStyle = .fullScreen
     tabBarVC.tabBar.backgroundColor = .white
 
+    let appearance = UITabBarAppearance()
+    appearance.configureWithOpaqueBackground()
+    UITabBar.appearance().standardAppearance = appearance
+    UITabBar.appearance().scrollEdgeAppearance = appearance
+
     // 탭바 이미지 설정 (이미지는 애플이 제공하는 것으로 사용)
     guard let items = tabBarVC.tabBar.items else { return }
     items[0].image = UIImage(systemName: "pawprint.fill")

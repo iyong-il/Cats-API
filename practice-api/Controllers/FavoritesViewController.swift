@@ -60,7 +60,8 @@ final class FavoritesViewController: UIViewController {
     self.view.addSubview(collectionView)
 
     collectionView.snp.makeConstraints {
-      $0.edges.equalToSuperview()
+      $0.top.left.right.equalToSuperview()
+      $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
     }
 
     collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

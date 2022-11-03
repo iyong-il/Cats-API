@@ -51,11 +51,16 @@ final class MainViewController: UIViewController {
     API.setupAFDatas(page: pages) { result in
       switch result {
       case .success(let data):
-        self.catsArrays.append(contentsOf: data)
+        
+        DispatchQueue.global().async {
+          self.catsArrays.append(contentsOf: data)
 
-//        DispatchQueue.main.async {
-          self.tableView.reloadData()
-//        }
+          DispatchQueue.main.async {
+            self.tableView.reloadData()
+          }
+        }
+
+
 
       case .failure(let error):
         print(error.localizedDescription)

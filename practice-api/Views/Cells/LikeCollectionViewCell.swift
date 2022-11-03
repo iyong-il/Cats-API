@@ -38,10 +38,8 @@ final class LikeCollectionViewCell: UICollectionViewCell {
 
   func loadImage(with imageUrl: String?) {
     print(#fileID, #function, #line, "- 고양이이미지를 받아오는 중입니다.")
-
     guard let urlString = imageUrl,
           let url = URL(string: urlString) else { return }
-
     // SDWebImage로 이미지 받아오기
     likeImageView.sd_setImage(with: url)
   }

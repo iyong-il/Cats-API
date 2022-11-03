@@ -16,7 +16,7 @@ extension UIFont {
   }
 
   // 폰트 메서드
-  static func Sunflower(size: CGFloat = 10, weight: SunflowerType = .medium ) -> UIFont {
+  static func Sunflower(weight: SunflowerType = .medium, size: CGFloat = 10) -> UIFont {
     return UIFont(name: "Sunflower-\(weight)", size: size)!
   }
 
