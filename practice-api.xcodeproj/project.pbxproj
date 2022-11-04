@@ -17,7 +17,9 @@
 		B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14763F628F317C8006466B5 /* UploadReusableView.swift */; };
 		B14763F928F317C8006466B5 /* UploadReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B14763F728F317C8006466B5 /* UploadReusableView.xib */; };
 		B169167F2910101900D0A4AF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B169167E2910101900D0A4AF /* Lottie */; };
-		B17E36242902EB58008B58B4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E36232902EB58008B58B4 /* API.swift */; };
+		B16D4A602915499900C23709 /* UploadCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4A5F2915499900C23709 /* UploadCats.swift */; };
+		B16D4A6229154B2B00C23709 /* UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D4A6129154B2B00C23709 /* UploadService.swift */; };
+		B17E36242902EB58008B58B4 /* CatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E36232902EB58008B58B4 /* CatsService.swift */; };
 		B1AA9C5D29073B880001BA08 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C5C29073B880001BA08 /* SnapKit */; };
 		B1AA9C6029073B900001BA08 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C5F29073B900001BA08 /* Alamofire */; };
 		B1AA9C6329073B960001BA08 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B1AA9C6229073B960001BA08 /* Then */; };
@@ -53,7 +55,9 @@
 		B14763F328F317B7006466B5 /* LikeReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeReusableView.xib; sourceTree = "<group>"; };
 		B14763F628F317C8006466B5 /* UploadReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadReusableView.swift; sourceTree = "<group>"; };
 		B14763F728F317C8006466B5 /* UploadReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadReusableView.xib; sourceTree = "<group>"; };
-		B17E36232902EB58008B58B4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B16D4A5F2915499900C23709 /* UploadCats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCats.swift; sourceTree = "<group>"; };
+		B16D4A6129154B2B00C23709 /* UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadService.swift; sourceTree = "<group>"; };
+		B17E36232902EB58008B58B4 /* CatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsService.swift; sourceTree = "<group>"; };
 		B1BB266C2910C3D000CCC95D /* 99988-like-animation-thumbs-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "99988-like-animation-thumbs-up.json"; sourceTree = "<group>"; };
 		B1D64E2D2901DBBC00599C40 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		B1D64E372901DEAE00599C40 /* Sunflower-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sunflower-Bold.ttf"; sourceTree = "<group>"; };
@@ -130,7 +134,8 @@
 		B17E36212902E3A6008B58B4 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B17E36232902EB58008B58B4 /* API.swift */,
+				B17E36232902EB58008B58B4 /* CatsService.swift */,
+				B16D4A6129154B2B00C23709 /* UploadService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -186,8 +191,8 @@
 				B1E9C22C28F2D4E000331188 /* AppDelegate.swift */,
 				B1E9C22E28F2D4E000331188 /* SceneDelegate.swift */,
 				B1D64E3D2901F11000599C40 /* Utils */,
-				B17E36212902E3A6008B58B4 /* API */,
 				B1E9C24328F2D50600331188 /* Networking */,
+				B17E36212902E3A6008B58B4 /* API */,
 				B1E9C24228F2D50100331188 /* Models */,
 				B1E9C24128F2D4FD00331188 /* Views */,
 				B1E9C24028F2D4F600331188 /* Controllers */,
@@ -224,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E9C25428F2D79100331188 /* Cats.swift */,
+				B16D4A5F2915499900C23709 /* UploadCats.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,16 +361,18 @@
 				B1E9C24D28F2D5BD00331188 /* UploadViewController.swift in Sources */,
 				B14763F828F317C8006466B5 /* UploadReusableView.swift in Sources */,
 				B1D64E2E2901DBBC00599C40 /* UIFont+Ext.swift in Sources */,
+				B16D4A6229154B2B00C23709 /* UploadService.swift in Sources */,
 				B1E9C22D28F2D4E000331188 /* AppDelegate.swift in Sources */,
 				B1E9C25D28F2D86500331188 /* Constants.swift in Sources */,
 				B1D64E3F2901F11D00599C40 /* Utilities.swift in Sources */,
 				B1E9C24928F2D54600331188 /* UIView+Ext.swift in Sources */,
 				B14763EA28F3157C006466B5 /* LikeCollectionViewCell.swift in Sources */,
+				B16D4A602915499900C23709 /* UploadCats.swift in Sources */,
 				B1E9C25328F2D67300331188 /* NetworkingManager.swift in Sources */,
 				B1E9C24B28F2D5B200331188 /* FavoritesViewController.swift in Sources */,
 				B14763F428F317B7006466B5 /* LikeReusableView.swift in Sources */,
 				B1E9C22F28F2D4E000331188 /* SceneDelegate.swift in Sources */,
-				B17E36242902EB58008B58B4 /* API.swift in Sources */,
+				B17E36242902EB58008B58B4 /* CatsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

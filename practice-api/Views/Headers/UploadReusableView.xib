@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,8 +22,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5m-bt-d77">
                     <rect key="frame" x="0.0" y="0.0" width="373" height="92"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-4x-4ss">
-                            <rect key="frame" x="20" y="28.666666666666671" width="165.33333333333334" height="35"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="업로드 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iP-4x-4ss">
+                            <rect key="frame" x="20" y="26" width="197" height="41"/>
                             <fontDescription key="fontDescription" name="Sunflower-Bold" family="Sunflower" pointSize="35"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                 <constraint firstAttribute="trailing" secondItem="I5m-bt-d77" secondAttribute="trailing" id="k4r-Wt-rY6"/>
                 <constraint firstItem="I5m-bt-d77" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="rsn-ic-nMs"/>
             </constraints>
-            <point key="canvasLocation" x="171.53846153846152" y="2.8436018957345972"/>
+            <point key="canvasLocation" x="170" y="2.8436018957345972"/>
         </collectionReusableView>
     </objects>
     <resources>

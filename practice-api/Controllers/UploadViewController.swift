@@ -67,6 +67,9 @@ final class UploadViewController: UIViewController {
 
   // 사진 업로드 버튼
   @objc func uploadButton() {
+//    UploadService.shared.postAFDatas(file: <#T##String#>) { Result<[UploadCats], Error> in
+//      <#code#>
+//    }
     //  insert 해야함
   }
 

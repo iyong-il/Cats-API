@@ -48,7 +48,7 @@ final class MainViewController: UIViewController {
   // MARK: - 메서드
   // 데이터 셋업
   private func setupDatas() {
-    API.setupAFDatas(page: pages) { result in
+    CatsService.shared.setupAFDatas(page: pages) { result in
       switch result {
       case .success(let data):
         
