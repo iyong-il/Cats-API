@@ -28,7 +28,7 @@ final class MainViewController: UIViewController {
     $0.contentMode = .scaleAspectFill
     $0.isHidden = true
   }
-  private var networkManager = NetworkingManager.shared
+
   private var catsArrays: CatsData = []
 
   private var pages = 1
@@ -59,9 +59,6 @@ final class MainViewController: UIViewController {
             self.tableView.reloadData()
           }
         }
-
-
-
       case .failure(let error):
         print(error.localizedDescription)
       }
@@ -122,21 +119,11 @@ extension MainViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCell(withIdentifier: CatsCell.catCellID, for: indexPath) as! CatsTableViewCell
+
     cell.cats = catsArrays[indexPath.row]
-
-    print(#fileID, #function, #line, "- API를 테이블 셀로 보낸다.")
-
-    cell.likeButtonPressed = { [weak self] (sender) in
-      self?.animationView.isHidden = false
-      self?.animationView.play { (finish) in
-        print(#fileID, #function, #line, "- 고양이 사진이 좋아요 목록으로 넘어간다.")
-        let vc = FavoritesViewController()
-        vc.like = cell.cats
-        self?.animationView.isHidden = true
-      }
-    }
-
+    cell.delegate = self
     cell.selectionStyle = .none
+
     return cell
   }
 
@@ -145,26 +132,14 @@ extension MainViewController: UITableViewDataSource {
 // MARK: - 확장 / 테이블뷰 델리게이트
 extension MainViewController: UITableViewDelegate {
 
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    // 셀의 데이터 세팅이 완료 된 후 실제 높이 값
-    cellHeight[indexPath] = cell.frame.size.height
-  }
-
-//  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//    // 이미 만들어진 셀 높이가 없다면 무조건 360
-//    // 페이징 시 화면이 튀는것을 방지하기 위해 높이를 고정시키는 것
-//    return cellHeight[indexPath] ?? 360
-//  }
-
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    print(#fileID, #function, #line, "- 페이징")
 
     // 화면에 보이는 좌측상단
     let contentOffsetY = scrollView.contentOffset.y
     // 모든 테이블뷰의 높이
     let tableViewContentSizeY = self.tableView.contentSize.height
-    // 페이지네이션을 하고싶은 y좌표는 테이블뷰의 0.2지점
-    let paginationY = tableViewContentSizeY * 0.2
+    // 페이지네이션을 하고싶은 y좌표는 테이블뷰의 0.3지점
+    let paginationY = tableViewContentSizeY * 0.3
 
     if contentOffsetY > tableViewContentSizeY - paginationY {
       // 기존 데이터에 append
@@ -174,5 +149,18 @@ extension MainViewController: UITableViewDelegate {
     }
 
   }
+
+}
+
+extension MainViewController: CatsCellDelegate {
+  func handleCatsCell() {
+    self.animationView.isHidden = false
+    self.animationView.play { finish in
+
+      print(#fileID, #function, #line, "- 고양이 사진이 좋아요 목록으로 넘어간다.")
+      self.animationView.isHidden = true
+    }
+  }
+
 
 }

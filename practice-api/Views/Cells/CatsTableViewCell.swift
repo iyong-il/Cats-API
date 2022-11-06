@@ -8,19 +8,32 @@
 import UIKit
 import SDWebImage
 
+protocol CatsCellDelegate: AnyObject {
+  func handleCatsCell()
+}
+
 final class CatsTableViewCell: UITableViewCell {
 
   // MARK: - 속성
   var cats: Cats? {
     didSet {
-      setupUIwithData()
+      guard let cats = cats else { return }
+      loadImage(with: cats.url)
     }
   }
 
+  weak var delegate: CatsCellDelegate?
+
   @IBOutlet weak var mainImageView: UIImageView!
   @IBOutlet weak var LikeButton: UIButton!
-  var catsID: String?
-  var likeButtonPressed: (CatsTableViewCell) -> Void = {(sender) in}
+
+
+  // MARK: - 라이프사이클
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    setupUI()
+
+  }
 
   // 셀 재사용 전 호출되는 메서드
   override func prepareForReuse() {
@@ -28,15 +41,9 @@ final class CatsTableViewCell: UITableViewCell {
 
     self.mainImageView.image = nil
   }
-  // MARK: - 라이프사이클
-  // 뷰디드로그
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    setupUI()
-
-  }
 
 
+// MARK: - 메서드
   // UI셋업 메서드
   private func setupUI() {
     self.mainImageView.contentMode = .scaleAspectFit
@@ -52,45 +59,21 @@ final class CatsTableViewCell: UITableViewCell {
     sender.isSelected.toggle()
 
     if sender.isSelected {
-      // 버튼이 눌린다면
       print(#fileID, #function, #line, "- 좋아요")
-      likeButtonPressed(self)
-
+      delegate?.handleCatsCell()
     }else {
-      // 아니라면
       print(#fileID, #function, #line, "- 좋아요해제")
 
     }
   }
 
-  // 이미지와 아이디를 한번에 넘기기위한 메서드
-  private func setupUIwithData() {
-    guard let cats = cats else { return }
-    print(#fileID, #function, #line, "- 고양이 데이터가 있습니다.")
-
-    loadImage(with: cats.url)
-  }
-
   // 이미지로드
   func loadImage(with imageUrl: String?) {
-    print(#fileID, #function, #line, "- 고양이이미지를 받아오는 중입니다.")
 
     guard let urlString = imageUrl,
           let url = URL(string: urlString) else { return }
 
-    // SDWebImage로 이미지 받아오기
-    mainImageView.sd_setImage(with: url)
-    
-//    DispatchQueue.global().async {
-//      guard let data = try? Data(contentsOf: url) else { return }
-//
-//      guard urlString == url.absoluteString else { return }
-//
-//      DispatchQueue.main.async {
-//        self.mainImageView.image = UIImage(data: data)
-//      }
-//    }
-
+        mainImageView.sd_setImage(with: url)
   }
 
 }

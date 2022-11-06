@@ -45,15 +45,18 @@ final class UploadViewController: UIViewController {
   // 사진 선택 버튼
   @objc func selecButtonTapped() {
     let alert = UIAlertController()
+
     let albumButton = UIAlertAction(title: "앨범 들어가기", style: .default) { [weak self] _ in
       guard let self = self else { return }
       self.imagePicker.delegate = self
       self.imagePicker.allowsEditing = true
       self.present(self.imagePicker, animated: true)
     }
+
     let cameraButton = UIAlertAction(title: "카메라앱 들어가기", style: .default) { _ in
       print("카메라에 접근합니다.")
     }
+
     let cancelButton = UIAlertAction(title: "닫기", style: .cancel) { _ in
       print("닫습니다.")
     }
@@ -67,10 +70,7 @@ final class UploadViewController: UIViewController {
 
   // 사진 업로드 버튼
   @objc func uploadButton() {
-//    UploadService.shared.postAFDatas(file: <#T##String#>) { Result<[UploadCats], Error> in
-//      <#code#>
-//    }
-    //  insert 해야함
+
   }
 
   // 사진 삭제 버튼

@@ -7,13 +7,13 @@
 
 import UIKit
 
-// MARK: - 업로드 데이터
+// MARK: - 업로드하면 서버에 저장되는 데이터
 struct UploadCats: Codable {
-    let id: String?
-    let url: String?
-    let width, height: Int?
-    let originalFilename: String?
-    let pending, approved: Int?
+    let id: String
+    let url: String
+    let width, height: Int
+    let originalFilename: String
+    let pending, approved: Int
 
     enum CodingKeys: String, CodingKey {
         case id, url, width, height

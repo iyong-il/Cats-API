@@ -8,64 +8,43 @@
 import UIKit
 import SnapKit
 import Then
+import SDWebImage
 
 final class FavoritesViewController: UIViewController {
-
-  var likeArray: CatsData = []
-  var like: Cats?
-
-  var uploadArray: CatsData = []
-  var upload: Cats?
-
   // MARK: - 속성
   // 컬렉션뷰
   lazy var collectionView: UICollectionView = {
     let view = UICollectionView(frame: .zero, collectionViewLayout: FavoritesViewController.setupCompositionalLayout())
-    view.isScrollEnabled = true
+    view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    view.isScrollEnabled = false
     view.showsHorizontalScrollIndicator = false
     view.showsVerticalScrollIndicator = false
     view.contentInset = .zero
     view.backgroundColor = .white
     view.clipsToBounds = true
 
+    view.dataSource = self
+
     return view
   }()
 
 
   // MARK: - 라이프사이클
+  // 로드뷰
+  override func loadView() {
+    self.view = collectionView
+  }
+
   // 뷰디드로드
   override func viewDidLoad() {
     super.viewDidLoad()
     setupNavbar()
     setupCollectionView()
-    fetchData()
   }
-
-  // 테이블뷰에서 데이터 받아오기
-  func fetchData() {
-    guard let like = like else { return }
-    print(#fileID, #function, #line, "- 테이블뷰에서 데이터를 받아왔다.")
-    likeArray.insert(like, at: 0)
-
-    DispatchQueue.main.async {
-      self.collectionView.reloadData()
-    }
-  }
-
-
 
   // MARK: - 메서드
   // 컬렉션뷰 셋업
   private func setupCollectionView() {
-    self.view.addSubview(collectionView)
-
-    collectionView.snp.makeConstraints {
-      $0.top.left.right.equalToSuperview()
-      $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-    }
-
-    collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    collectionView.dataSource = self
 
     // 좋아요 쎌 등록
     collectionView.register(UINib(nibName: String(describing: LikeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: Like.likeCellID)
@@ -85,29 +64,6 @@ final class FavoritesViewController: UIViewController {
   private func setupNavbar() {
     self.title = "목록"
   }
-
-  // 컴포지셔널 레이아웃 생성 - 타입메서드
-  static func setupCompositionalLayout() -> UICollectionViewLayout {
-
-    let layout = UICollectionViewCompositionalLayout {
-      (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-
-      switch sectionIndex {
-      case 0:
-        return FavoritesViewController.setupCompositionalLayoutHorizental()
-
-      case 1:
-        return FavoritesViewController.setupCompositionalLayoutHorizental()
-
-      default:
-        return nil
-
-      }
-    }
-    return layout
-  }
-
-
 
   fileprivate func makeAlert(text: String) -> UIAlertController {
     let alert = UIAlertController(title: text, message: nil, preferredStyle: .alert)
@@ -136,10 +92,10 @@ extension FavoritesViewController: UICollectionViewDataSource {
     switch section {
 
     case 0:
-      return likeArray.count
+      return 3
 
     case 1:
-      return uploadArray.count
+      return 4
 
     default:
       return 0
@@ -155,12 +111,11 @@ extension FavoritesViewController: UICollectionViewDataSource {
     case 0:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Like.likeCellID, for: indexPath) as! LikeCollectionViewCell
 
-      cell.cats = likeArray[indexPath.item]
-
-      // 버튼 클로저 - 좋아요 삭제 (나중에 델리겟으로 변경 예정)
+      // 버튼 클로저 - 좋아요 삭제
       cell.likeDeleteButtonPressed = { [weak self] (sender) in
         guard let self = self else { return }
         self.makeAlert(text: "해제 하시겠습니까?")
+        
       }
 
       return cell
@@ -168,9 +123,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
     case 1:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Upload.uploadCellID, for: indexPath) as! UploadCollectionViewCell
 
-      cell.cats = uploadArray[indexPath.item]
-
-      // 버튼 클로저 - 업로드 삭제 (나중에 델리겟으로 변경 예정)
+      // 버튼 클로저 - 업로드 삭제
       cell.uploadDeleteButtonPressed = { [weak self] (sender) in
         guard let self = self else { return }
         self.makeAlert(text: "삭제 하시겠습니까?")
@@ -213,6 +166,27 @@ extension FavoritesViewController: UICollectionViewDataSource {
 
 // MARK: - 확장 / 컬렉션뷰 컴포지셔널 레이아웃
 extension FavoritesViewController {
+
+  // 컴포지셔널 레이아웃 생성
+  static func setupCompositionalLayout() -> UICollectionViewLayout {
+
+    let layout = UICollectionViewCompositionalLayout {
+      (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+
+      switch sectionIndex {
+      case 0:
+        return FavoritesViewController.setupCompositionalLayoutHorizental()
+
+      case 1:
+        return FavoritesViewController.setupCompositionalLayoutHorizental()
+
+      default:
+        return nil
+
+      }
+    }
+    return layout
+  }
 
   static func setupCompositionalLayoutHorizental()  -> NSCollectionLayoutSection {
 

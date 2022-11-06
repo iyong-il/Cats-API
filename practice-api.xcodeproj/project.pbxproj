@@ -134,7 +134,6 @@
 		B17E36212902E3A6008B58B4 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B17E36232902EB58008B58B4 /* CatsService.swift */,
 				B16D4A6129154B2B00C23709 /* UploadService.swift */,
 			);
 			path = API;
@@ -143,6 +142,7 @@
 		B1BB266B2910C24A00CCC95D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B1E9C24228F2D50100331188 /* Models */,
 				B1D64E3E2901F11D00599C40 /* Utilities.swift */,
 			);
 			path = Utilities;
@@ -193,7 +193,6 @@
 				B1D64E3D2901F11000599C40 /* Utils */,
 				B1E9C24328F2D50600331188 /* Networking */,
 				B17E36212902E3A6008B58B4 /* API */,
-				B1E9C24228F2D50100331188 /* Models */,
 				B1E9C24128F2D4FD00331188 /* Views */,
 				B1E9C24028F2D4F600331188 /* Controllers */,
 				B1E9C23728F2D4E100331188 /* LaunchScreen.storyboard */,
@@ -218,7 +217,6 @@
 		B1E9C24128F2D4FD00331188 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B14763FA28F325CF006466B5 /* UIViews */,
 				B14763E728F313EB006466B5 /* Headers */,
 				B14763E628F3139B006466B5 /* Cells */,
 			);
@@ -228,6 +226,7 @@
 		B1E9C24228F2D50100331188 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B17E36232902EB58008B58B4 /* CatsService.swift */,
 				B1E9C25428F2D79100331188 /* Cats.swift */,
 				B16D4A5F2915499900C23709 /* UploadCats.swift */,
 			);
@@ -238,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E9C25228F2D67300331188 /* NetworkingManager.swift */,
+				B14763FA28F325CF006466B5 /* UIViews */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

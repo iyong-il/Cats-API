@@ -9,12 +9,12 @@ import UIKit
 
 final class UploadCollectionViewCell: UICollectionViewCell {
 
-  var cats: Cats?
-
+  // MARK: - 속성
   @IBOutlet weak var uploadImageView: UIImageView!
 
   var uploadDeleteButtonPressed: (UploadCollectionViewCell) -> Void = { (sender) in }
 
+  // MARK: - 라이프사이클
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -27,7 +27,7 @@ final class UploadCollectionViewCell: UICollectionViewCell {
 
 
 
-
+// MARK: - 메서드
   @IBAction func deleteButtonTapped(_ sender: UIButton) {
     uploadDeleteButtonPressed(self)
   }

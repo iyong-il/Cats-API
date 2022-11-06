@@ -44,10 +44,6 @@ struct UploadService {
       }
     }
 
-//    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//    request.timeoutInterval = 10
-
-
 
   }
 }

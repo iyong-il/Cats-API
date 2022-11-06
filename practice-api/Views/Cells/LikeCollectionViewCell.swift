@@ -10,18 +10,13 @@ import SDWebImage
 
 final class LikeCollectionViewCell: UICollectionViewCell {
 
-  var cats: Cats? {
-    didSet {
-      print(#fileID, #function, #line, "- 좋아요목록 셀까지 넘어왔다.")
-      setupImage()
-    }
-  }
-  
+  // MARK: - 속성
   @IBOutlet weak var likeImageView: UIImageView!
 
-  var likeDeleteButtonPressed: (LikeCollectionViewCell) -> Void = {(sender) in}
+  var likeDeleteButtonPressed: (LikeCollectionViewCell) -> Void = { (sender) in }
 
 
+  // MARK: - 라이프사이클
     override func awakeFromNib() {
         super.awakeFromNib()
       likeImageView.backgroundColor = .blue
@@ -31,20 +26,7 @@ final class LikeCollectionViewCell: UICollectionViewCell {
       likeImageView.contentMode = .scaleAspectFit
     }
 
-  func setupImage() {
-    guard let cats = cats else { return }
-    loadImage(with: cats.url)
-  }
-
-  func loadImage(with imageUrl: String?) {
-    print(#fileID, #function, #line, "- 고양이이미지를 받아오는 중입니다.")
-    guard let urlString = imageUrl,
-          let url = URL(string: urlString) else { return }
-    // SDWebImage로 이미지 받아오기
-    likeImageView.sd_setImage(with: url)
-  }
-
-
+  // MARK: - 메서드
   @IBAction func deleteButtonTapped(_ sender: UIButton) {
     likeDeleteButtonPressed(self)
   }

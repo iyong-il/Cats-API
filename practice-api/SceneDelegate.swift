@@ -47,6 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     let appearance = UITabBarAppearance()
     appearance.configureWithOpaqueBackground()
+    appearance.backgroundColor = .white
     UITabBar.appearance().standardAppearance = appearance
     UITabBar.appearance().scrollEdgeAppearance = appearance
 

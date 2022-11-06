@@ -15,7 +15,6 @@ extension UIFont {
     case light = "Light"
   }
 
-  // 폰트 메서드
   static func Sunflower(weight: SunflowerType = .medium, size: CGFloat = 10) -> UIFont {
     return UIFont(name: "Sunflower-\(weight)", size: size)!
   }
